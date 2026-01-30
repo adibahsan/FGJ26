@@ -14,7 +14,7 @@ public partial class GameManager : Node
 	[Export] public PackedScene PlayerScene { get; set; }
 
 	private House _house;
-	private Node3D _player;
+	private Player _player;
 
 	public override void _Ready()
 	{
@@ -54,7 +54,7 @@ public partial class GameManager : Node
 			return;
 		}
 
-		_player = PlayerScene.Instantiate<Node3D>();
+		_player = PlayerScene.Instantiate<Player>();
 		AddChild(_player);
 		_player.GlobalPosition = _house.Spawnpoint.GlobalPosition;
 	}
