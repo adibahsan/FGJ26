@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://pffiojx1kpdp"]
+[gd_scene format=3 uid="uid://cxtdgc4grlujb"]
 
-[node name="GameLevel" type="Node3D" unique_id=958063721]
+[ext_resource type="Script" uid="uid://da4ki7jufc5xq" path="res://Scripts/GameManager.cs" id="1_jcjmw"]
+
+[node name="GameLevel" type="Node3D" unique_id=1811580237]
+script = ExtResource("1_jcjmw")

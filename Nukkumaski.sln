@@ -1,0 +1,19 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nukkumaski", "Nukkumaski.csproj", "{23F26993-B9DF-41B2-BD73-4814BFFC2BAA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	Debug|Any CPU = Debug|Any CPU
+	ExportDebug|Any CPU = ExportDebug|Any CPU
+	ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23F26993-B9DF-41B2-BD73-4814BFFC2BAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23F26993-B9DF-41B2-BD73-4814BFFC2BAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23F26993-B9DF-41B2-BD73-4814BFFC2BAA}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{23F26993-B9DF-41B2-BD73-4814BFFC2BAA}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{23F26993-B9DF-41B2-BD73-4814BFFC2BAA}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{23F26993-B9DF-41B2-BD73-4814BFFC2BAA}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+	EndGlobalSection
+EndGlobal
