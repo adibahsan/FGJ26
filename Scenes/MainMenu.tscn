@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d216gtchmfk6y"]
 
 [ext_resource type="Texture2D" uid="uid://bkxk2jsnbmibh" path="res://Assets/MainmenuBG.png" id="1_853f1"]
-[ext_resource type="Script" path="res://Scripts/MainMenu.cs" id="1_tt5f1"]
+[ext_resource type="Script" uid="uid://ciw4cmj4uuptt" path="res://Scripts/MainMenu.cs" id="1_tt5f1"]
 
 [sub_resource type="Theme" id="Theme_853f1"]
 default_font_size = 74
