@@ -20,23 +20,11 @@ Full design doc: `PLAN.md`.
 
 - **Move**: WASD (bound via Input Map actions: `move_forward`, `move_back`, `move_left`, `move_right`)
 
-## Run locally
-
-### Run from the editor
+## Run from the editor
 
 1. Install **Godot 4.6 (.NET / C# build)**.
 2. Open `project.godot` in Godot.
 3. Press **Play**.
-
-### Build a Windows executable
-
-1. In Godot, install export templates: `Editor → Manage Export Templates…`
-2. Open `Project → Export…`
-3. Add preset: `Windows Desktop`
-4. Set an export path (example: `build/Nukkumaski.exe`)
-5. Click **Export Project** (or **Export All**)
-
-This produces an `.exe` plus a `.pck` (and possibly additional files). Run the `.exe` from the exported folder.
 
 ## Project structure
 
