@@ -353,6 +353,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5492573, -0.07260132, 2.435
 [node name="Lamp" parent="." unique_id=285931624 instance=ExtResource("41_q2hw7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9000654, -0.07260083, -1.1667175)
 
+[node name="Lamp2" parent="." unique_id=1340828396 instance=ExtResource("41_q2hw7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.987206, -0.07260083, -4.68218)
+
+[node name="Lamp3" parent="." unique_id=838017238 instance=ExtResource("41_q2hw7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0136704, -0.07260083, 0.34625483)
+
+[node name="Lamp4" parent="." unique_id=1737770113 instance=ExtResource("41_q2hw7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.836069, -0.07260083, -7.249329)
+
+[node name="Lamp5" parent="." unique_id=1395704916 instance=ExtResource("41_q2hw7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.644248, -0.07260083, -7.3287253)
+
 [node name="BathroomCarpet" parent="." unique_id=1877880841 instance=ExtResource("29_tnjg6")]
 transform = Transform3D(1.3999571, -0.0039278436, 0.010243656, 0.0039224676, 1.3999943, 0.00074905274, -0.010245715, -0.0007203294, 1.3999623, -2.8260293, -0.04530416, -1.7118679)
 
