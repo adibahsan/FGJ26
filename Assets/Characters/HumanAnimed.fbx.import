@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://biu7ttdmfwtc5"
-path="res://.godot/imported/ElfAnimed.glb-fb4ed5d97894dffdef029922e32dbc8a.scn"
+uid="uid://b3t3ljltanv6f"
+path="res://.godot/imported/HumanAnimed.fbx-8ae33a953abb3e5aac8967f7933f60e3.scn"
 
 [deps]
 
-source_file="res://Assets/Characters/ElfAnimed.glb"
-dest_files=["res://.godot/imported/ElfAnimed.glb-fb4ed5d97894dffdef029922e32dbc8a.scn"]
+source_file="res://Assets/Characters/HumanAnimed.fbx"
+dest_files=["res://.godot/imported/HumanAnimed.fbx-8ae33a953abb3e5aac8967f7933f60e3.scn"]
 
 [params]
 
@@ -30,25 +30,15 @@ meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
 animation/fps=30
-animation/trimming=false
+animation/trimming=true
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={
-"meshes": {
-"ElfAnimed_Cube_012": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://Assets/Characters/ElfAnimed_Cube_012.res",
-"save_to_file/path": "uid://ql0xat22oj25"
-}
-}
-}
-gltf/naming_version=2
-gltf/embedded_image_handling=1
+_subresources={}
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1
+fbx/naming_version=2
