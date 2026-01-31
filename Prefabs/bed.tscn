@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://h2pmfpbcmham" path="res://Assets/Textures/DefaultMaterial_Base_color_Sleep.png" id="1_1jku7"]
 [ext_resource type="Script" uid="uid://cqfpx0ndblp00" path="res://Scripts/Bed.cs" id="1_o36uu"]
-[ext_resource type="Material" uid="uid://ccludhog7dwlv" path="res://Assets/Materials/BedMaterial.tres" id="2_405ds"]
+[ext_resource type="Material" path="res://Assets/Materials/BedMaterial.tres" id="2_405ds"]
 [ext_resource type="ArrayMesh" uid="uid://vhhafrhxmta2" path="res://Assets/Environment/Bed.res" id="2_c87oj"]
 [ext_resource type="ArrayMesh" uid="uid://dbak7ukx88jm" path="res://Assets/Characters/Human.res" id="2_qi3l6"]
 [ext_resource type="Script" uid="uid://bqsbhbvgmrjqx" path="res://Scripts/BedArea.cs" id="3_qi3l6"]
@@ -35,6 +35,7 @@ material_override = SubResource("StandardMaterial3D_o36uu")
 mesh = ExtResource("2_qi3l6")
 
 [node name="MaskPos" type="Node3D" parent="HumanMesh" unique_id=803492774]
+transform = Transform3D(-4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1187531775 node_paths=PackedStringArray("MaskPosition")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.75, -0.89022875)
