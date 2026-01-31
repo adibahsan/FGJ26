@@ -1,4 +1,4 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://bgurbaxu1xba7"]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bsx5jy6grsvxf"]
 
 [ext_resource type="Texture2D" uid="uid://b5jdft0k83qc2" path="res://Assets/Textures/Radiater_BaseColor.png" id="1_8hwlx"]
 [ext_resource type="Texture2D" uid="uid://bgd8h1g8lu2um" path="res://Assets/Textures/Radiater_Emission.png" id="2_jf8y1"]
