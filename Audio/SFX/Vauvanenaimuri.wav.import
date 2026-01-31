@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Vauvanenaimuri.wav-bdcba78b2bac7e93ff81a36854
 [params]
 
 force/8_bit=false
-force/mono=false
+force/mono=true
 force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=true

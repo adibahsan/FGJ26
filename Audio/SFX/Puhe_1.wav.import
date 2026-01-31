@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Puhe_1.wav-ac3ee47696e5d3127094ebedcfb410b6.s
 [params]
 
 force/8_bit=false
-force/mono=false
+force/mono=true
 force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=true

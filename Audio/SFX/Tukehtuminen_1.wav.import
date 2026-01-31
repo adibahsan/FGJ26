@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Tukehtuminen_1.wav-ec1a5e9855f1067daa552b0161
 [params]
 
 force/8_bit=false
-force/mono=false
+force/mono=true
 force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=true
