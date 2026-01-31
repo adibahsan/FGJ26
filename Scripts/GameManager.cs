@@ -208,6 +208,17 @@ public partial class GameManager : Node
 		return _bedArea.CurrentMask == CurrentEvent;
 	}
 
+	public void OnMaskApplied(MaskType maskType)
+	{
+		// If the correct mask was applied for the current event, stop the looping SFX immediately.
+			if (maskType == CurrentEvent && CurrentEvent == MaskType.Cpap)
+		{
+			var audio = global::PlayerAudio.Instance;
+			audio?.StopLoopingAudio();
+			GD.Print($"Correct mask applied ({maskType}), stopped looping audio");
+		}
+	}
+
 	public void StartNextMinigame()
 	{
 		if (_minigameIndex >= _shuffledMinigames.Count)
@@ -275,7 +286,6 @@ public partial class GameManager : Node
 
 	public void EndGame(bool won)
 	{
-		return;
 		if (_gameEnded)
 		{
 			return;

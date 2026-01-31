@@ -66,6 +66,7 @@ public partial class BedArea : Area3D
 
 		CurrentMask = mask.Type;
 		GameManager.Instance?.ShowSetMaskUI(false);
+		GameManager.Instance?.OnMaskApplied(mask.Type);
 		GD.Print($"Set {mask.Type} mask on bed");
 	}
 
