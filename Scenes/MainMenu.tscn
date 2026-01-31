@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d216gtchmfk6y"]
 
-[ext_resource type="Texture2D" uid="uid://bkxk2jsnbmibh" path="res://Assets/MainmenuBG.png" id="1_853f1"]
 [ext_resource type="Script" uid="uid://ciw4cmj4uuptt" path="res://Scripts/MainMenu.cs" id="1_tt5f1"]
+[ext_resource type="Texture2D" uid="uid://er1gesou4eff" path="res://Assets/UI/UI_BG_02.png" id="2_df05h"]
 [ext_resource type="Texture2D" uid="uid://d086nxg163dne" path="res://Assets/UI/UI_MinigameBG_01.png" id="3_df05h"]
 [ext_resource type="FontFile" uid="uid://cpwhbheucfmak" path="res://Assets/Fonts/ComicNeue-Bold.ttf" id="4_8um5k"]
 [ext_resource type="Texture2D" uid="uid://dngdx6qeic76e" path="res://Assets/UI/UI_ButtonBG_01.png" id="5_xim88"]
@@ -29,7 +29,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_853f1")
+texture = ExtResource("2_df05h")
+expand_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1007077328]
 layout_mode = 1
@@ -62,7 +63,7 @@ offset_top = 24.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_853f1")
-theme_override_colors/font_color = Color(0.6039216, 0.6039216, 0.70980394, 1)
+theme_override_colors/font_color = Color(0.42352942, 0.41568628, 0.5921569, 1)
 theme_override_fonts/font = ExtResource("4_8um5k")
 text = "NukkuMaski"
 horizontal_alignment = 1
@@ -91,7 +92,7 @@ offset_left = 55.0
 offset_top = 70.0
 offset_right = 168.0
 offset_bottom = 133.0
-theme_override_colors/font_color = Color(0.6039216, 0.6039216, 0.70980394, 1)
+theme_override_colors/font_color = Color(0.42415056, 0.4149968, 0.5921563, 1)
 theme_override_fonts/font = ExtResource("4_8um5k")
 theme_override_font_sizes/font_size = 54
 text = "Start"
@@ -130,7 +131,7 @@ offset_left = 359.0
 offset_top = 12.0
 offset_right = 472.0
 offset_bottom = 75.0
-theme_override_colors/font_color = Color(0.6039216, 0.6039216, 0.70980394, 1)
+theme_override_colors/font_color = Color(0.42352942, 0.41568628, 0.5921569, 1)
 theme_override_fonts/font = ExtResource("4_8um5k")
 theme_override_font_sizes/font_size = 54
 text = "Quit"
