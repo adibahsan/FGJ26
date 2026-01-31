@@ -59,17 +59,10 @@ public partial class BedArea : Area3D
 			return;
 		}
 
-		Node3D maskRoot = mask.MaskRoot;
-		if (maskRoot == null)
-		{
-			GD.PrintErr("BedArea: Mask has no MaskRoot set!");
-			return;
-		}
-
-		maskRoot.GetParent()?.RemoveChild(maskRoot);
-		MaskPosition.AddChild(maskRoot);
-		maskRoot.Position = Vector3.Zero;
-		maskRoot.Rotation = Vector3.Zero;
+		mask.GetParent()?.RemoveChild(mask);
+		MaskPosition.AddChild(mask);
+		mask.Position = Vector3.Zero;
+		mask.Rotation = Vector3.Zero;
 
 		CurrentMask = mask.Type;
 		GameManager.Instance?.ShowSetMaskUI(false);
