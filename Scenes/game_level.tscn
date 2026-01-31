@@ -3,8 +3,12 @@
 [ext_resource type="Script" uid="uid://da4ki7jufc5xq" path="res://Scripts/GameManager.cs" id="1_jcjmw"]
 [ext_resource type="PackedScene" uid="uid://pffiojx1kpdp" path="res://Prefabs/house.tscn" id="2_ht4rx"]
 [ext_resource type="PackedScene" uid="uid://dwayruujhu53i" path="res://Prefabs/player.tscn" id="3_u7uub"]
+[ext_resource type="PackedScene" uid="uid://ulnwd5m7wivq" path="res://UI/ui_pick_up.tscn" id="4_u7uub"]
 
-[node name="GameLevel" type="Node3D" unique_id=1811580237]
+[node name="GameLevel" type="Node3D" unique_id=1811580237 node_paths=PackedStringArray("PickupUIElement")]
 script = ExtResource("1_jcjmw")
 HouseScene = ExtResource("2_ht4rx")
 PlayerScene = ExtResource("3_u7uub")
+PickupUIElement = NodePath("UiPickUp")
+
+[node name="UiPickUp" parent="." unique_id=1815324665 instance=ExtResource("4_u7uub")]

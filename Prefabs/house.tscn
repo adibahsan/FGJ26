@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ckdhe3yq0e0mv" path="res://Prefabs/camera_3d.tscn" id="2_65ldg"]
 [ext_resource type="PackedScene" uid="uid://1ftg6cuk2asy" path="res://Prefabs/directional_light_3d.tscn" id="3_gjult"]
 [ext_resource type="PackedScene" uid="uid://dgmbi0pccq0gu" path="res://Prefabs/bed.tscn" id="5_gjult"]
+[ext_resource type="PackedScene" uid="uid://41lkbrtcm7uk" path="res://Prefabs/Masks/sleep_mask.tscn" id="6_qt68a"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cel1d"]
 albedo_color = Color(2.4065375e-07, 0.39114994, 0.16083744, 1)
@@ -24,7 +25,7 @@ mesh = SubResource("BoxMesh_ahg4q")
 [node name="Spawnpoint" type="Marker3D" parent="." unique_id=136597774]
 
 [node name="Camera3D" parent="." unique_id=647038774 instance=ExtResource("2_65ldg")]
-transform = Transform3D(1, 0, 0, 0, 0.46928662, 0.8830458, 0, -0.8830458, 0.46928662, 0, 12.073212, 9.412972)
+transform = Transform3D(1, 0, 0, 0, 0.7111187, 0.7030721, 0, -0.7030721, 0.7111187, 0, 11.75, 12.740425)
 
 [node name="DirectionalLight3D" parent="." unique_id=54087904 instance=ExtResource("3_gjult")]
 transform = Transform3D(1, 0, 0, 0, 0.4203708, 0.9073524, 0, -0.9073524, 0.4203708, 0, 10, 0)
@@ -42,3 +43,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1, -9.75)
 
 [node name="Bed" parent="." unique_id=898245071 instance=ExtResource("5_gjult")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -7.667753)
+
+[node name="SleepMask" parent="." unique_id=1955854983 instance=ExtResource("6_qt68a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.25, 3)

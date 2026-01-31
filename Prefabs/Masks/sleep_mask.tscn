@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://41lkbrtcm7uk"]
 
+[ext_resource type="Script" uid="uid://dw6slyygsj2rd" path="res://Scripts/Mask.cs" id="1_a7h8t"]
+
 [sub_resource type="TorusMesh" id="TorusMesh_io01m"]
 inner_radius = 0.114
 outer_radius = 0.26
@@ -11,7 +13,9 @@ outer_radius = 0.26
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1923195716]
 mesh = SubResource("TorusMesh_io01m")
 
-[node name="PickupTrigger" type="Area3D" parent="." unique_id=1167059060]
+[node name="PickupTrigger" type="Area3D" parent="." unique_id=1167059060 node_paths=PackedStringArray("MaskRoot")]
+script = ExtResource("1_a7h8t")
+MaskRoot = NodePath("..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PickupTrigger" unique_id=624182702]
 shape = SubResource("SphereShape3D_a7h8t")
