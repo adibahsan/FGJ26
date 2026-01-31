@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b1qrnodeiuves"]
+
+[ext_resource type="Texture2D" uid="uid://djmd6duhymsae" path="res://Assets/Textures/Lamp_BaseColor.png" id="1_fx05t"]
+
+[resource]
+albedo_texture = ExtResource("1_fx05t")
