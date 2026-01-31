@@ -1,16 +1,10 @@
 [gd_scene format=3 uid="uid://dwayruujhu53i"]
 
 [ext_resource type="Script" uid="uid://dnem3n4qma6cg" path="res://Scripts/Player.cs" id="1_player"]
+[ext_resource type="ArrayMesh" uid="uid://dbak7ukx88jm" path="res://Assets/Characters/Human.res" id="2_5wxv7"]
+[ext_resource type="Material" uid="uid://3cf3pesmxqwp" path="res://Assets/Materials/HumanMaterial.tres" id="2_y5hcb"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3icqa"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_3icqa"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y6xdh"]
-albedo_color = Color(0, 0, 0, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_5wxv7"]
-size = Vector3(0.6, 0.1, 0.3)
 
 [node name="Player" type="RigidBody3D" unique_id=1977189581 node_paths=PackedStringArray("MaskCarryPosition")]
 axis_lock_linear_y = true
@@ -26,14 +20,10 @@ MaskCarryPosition = NodePath("MaskCarryPos")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_3icqa")
 
-[node name="Model" type="MeshInstance3D" parent="." unique_id=1074493498]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-mesh = SubResource("CapsuleMesh_3icqa")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Model" unique_id=283337870]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.576, -0.504)
-material_override = SubResource("StandardMaterial3D_y6xdh")
-mesh = SubResource("BoxMesh_5wxv7")
-
 [node name="MaskCarryPos" type="Node3D" parent="." unique_id=2146350170]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1.25)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=881148187]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, 0, 0, 0)
+material_override = ExtResource("2_y5hcb")
+mesh = ExtResource("2_5wxv7")

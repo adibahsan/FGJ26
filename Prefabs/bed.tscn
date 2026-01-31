@@ -1,17 +1,43 @@
 [gd_scene format=3 uid="uid://dgmbi0pccq0gu"]
 
+[ext_resource type="Texture2D" uid="uid://h2pmfpbcmham" path="res://Assets/Textures/DefaultMaterial_Base_color_Sleep.png" id="1_1jku7"]
+[ext_resource type="ArrayMesh" uid="uid://dbak7ukx88jm" path="res://Assets/Characters/Human.res" id="2_qi3l6"]
+[ext_resource type="Script" uid="uid://bqsbhbvgmrjqx" path="res://Scripts/BedArea.cs" id="3_qi3l6"]
+
 [sub_resource type="BoxMesh" id="BoxMesh_qt68a"]
 size = Vector3(2, 0.5, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4wnw1"]
 size = Vector3(2, 0.5, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o36uu"]
+albedo_texture = ExtResource("1_1jku7")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_1jku7"]
+radius = 1.0
+
 [node name="Bed" type="StaticBody3D" unique_id=898245071]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1222097331]
+[node name="BedMesh" type="MeshInstance3D" parent="." unique_id=1222097331]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 mesh = SubResource("BoxMesh_qt68a")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1027774837]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_4wnw1")
+
+[node name="HumanMesh" type="MeshInstance3D" parent="." unique_id=387164184]
+transform = Transform3D(-1.3027009e-15, 4.371139e-08, -1, 1, 2.9802322e-08, 0, 2.9802322e-08, -1, -4.371139e-08, 1, 0.75, 0)
+material_override = SubResource("StandardMaterial3D_o36uu")
+mesh = ExtResource("2_qi3l6")
+
+[node name="MaskPos" type="Node3D" parent="HumanMesh" unique_id=803492774]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.5, -3.9738076e-08, 1.25)
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1187531775 node_paths=PackedStringArray("MaskPosition")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.75, 0)
+script = ExtResource("3_qi3l6")
+MaskPosition = NodePath("../HumanMesh/MaskPos")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=157636493]
+shape = SubResource("SphereShape3D_1jku7")
