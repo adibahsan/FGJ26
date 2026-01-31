@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dkoylyty766ik"]
 
 [ext_resource type="Script" uid="uid://c8uau36eq2w5c" path="res://Scripts/UiScore.cs" id="1_44yge"]
+[ext_resource type="Theme" uid="uid://d2fp7y8bgh7jy" path="res://Themes/ui_font_main_theme.tres" id="2_pfddb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7is0w"]
 font_size = 32
@@ -27,10 +28,12 @@ offset_bottom = 40.0
 
 [node name="Header" type="Label" parent="HBoxContainer" unique_id=851380015]
 layout_mode = 2
+theme = ExtResource("2_pfddb")
 text = "Score:"
 label_settings = SubResource("LabelSettings_7is0w")
 
 [node name="Score" type="Label" parent="HBoxContainer" unique_id=462358447]
 layout_mode = 2
+theme = ExtResource("2_pfddb")
 text = "9999999"
 label_settings = SubResource("LabelSettings_7is0w")

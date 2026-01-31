@@ -3,6 +3,8 @@ using Godot;
 public partial class PlayerAudio : Node
 {
 	[Export] public AudioStreamPlayer[] MusicPlayers { get; set; }
+	[Export] public AudioStreamPlayer SFXPlayer { get; set; }
+	[Export] public AudioStreamPlayer SFXPlayerLoop { get; set; }
 	[Export] public float VolumeTransitionSpeed { get; set; } = 1f;
 	[Export] public float MinVolumeDb { get; set; } = -80f;
 	[Export] public float MaxVolumeDb { get; set; } = 0f;
@@ -71,6 +73,34 @@ public partial class PlayerAudio : Node
 			float newLinear = Mathf.MoveToward(currentLinear, targetLinear, linearStep);
 
 			MusicPlayers[i].VolumeDb = Mathf.LinearToDb(newLinear);
+		}
+	}
+
+	public void PlayEventAudio(EventAudioData eventData)
+	{
+		if (eventData == null)
+		{
+			return;
+		}
+
+		if (eventData.OneShotSound != null && SFXPlayer != null)
+		{
+			SFXPlayer.Stream = eventData.OneShotSound;
+			SFXPlayer.Play();
+		}
+
+		if (eventData.LoopingSound != null && SFXPlayerLoop != null)
+		{
+			SFXPlayerLoop.Stream = eventData.LoopingSound;
+			SFXPlayerLoop.Play();
+		}
+	}
+
+	public void StopLoopingAudio()
+	{
+		if (SFXPlayerLoop != null)
+		{
+			SFXPlayerLoop.Stop();
 		}
 	}
 }

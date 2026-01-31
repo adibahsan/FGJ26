@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EventAudioData" format=3 uid="uid://ln3hikckqqgw"]
+
+[ext_resource type="AudioStream" uid="uid://dkuxvawoa0phj" path="res://Audio/SFX/Tayttyy vedella.wav" id="1_wi87x"]
+[ext_resource type="Script" uid="uid://bx60ti282k44w" path="res://Scripts/EventAudioData.cs" id="2_hu3j2"]
+
+[resource]
+script = ExtResource("2_hu3j2")
+EventType = 5
+LoopingSound = ExtResource("1_wi87x")
+metadata/_custom_type_script = "uid://bx60ti282k44w"

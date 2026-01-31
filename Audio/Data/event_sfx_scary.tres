@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EventAudioData" format=3 uid="uid://cm21ttjbqbjv2"]
+
+[ext_resource type="AudioStream" uid="uid://csy4onn2nl250" path="res://Audio/SFX/Koputus_1.wav" id="1_wuyom"]
+[ext_resource type="Script" uid="uid://bx60ti282k44w" path="res://Scripts/EventAudioData.cs" id="2_ssgdd"]
+
+[resource]
+script = ExtResource("2_ssgdd")
+EventType = 3
+LoopingSound = ExtResource("1_wuyom")
+metadata/_custom_type_script = "uid://bx60ti282k44w"

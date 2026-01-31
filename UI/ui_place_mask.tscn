@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://cdplpx4r222di"]
 
+[ext_resource type="Theme" uid="uid://d2fp7y8bgh7jy" path="res://Themes/ui_font_main_theme.tres" id="1_w4rmh"]
+
 [sub_resource type="LabelSettings" id="LabelSettings_7is0w"]
 font_size = 32
 
@@ -22,5 +24,6 @@ offset_left = -135.0
 offset_right = 135.0
 offset_bottom = 45.0
 grow_horizontal = 2
+theme = ExtResource("1_w4rmh")
 text = "Press E to place mask"
 label_settings = SubResource("LabelSettings_7is0w")

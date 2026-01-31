@@ -1,0 +1,6 @@
+[gd_resource type="Theme" format=3 uid="uid://d2fp7y8bgh7jy"]
+
+[ext_resource type="FontFile" uid="uid://cpwhbheucfmak" path="res://Assets/Fonts/ComicNeue-Bold.ttf" id="1_d5tk6"]
+
+[resource]
+default_font = ExtResource("1_d5tk6")

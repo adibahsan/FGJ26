@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EventAudioData" format=3 uid="uid://c6816pakdnmjg"]
+
+[ext_resource type="AudioStream" uid="uid://c21wdfyx38860" path="res://Audio/SFX/Lampo.wav" id="1_a8ejn"]
+[ext_resource type="Script" uid="uid://bx60ti282k44w" path="res://Scripts/EventAudioData.cs" id="2_h8vcu"]
+
+[resource]
+script = ExtResource("2_h8vcu")
+EventType = 1
+LoopingSound = ExtResource("1_a8ejn")
+metadata/_custom_type_script = "uid://bx60ti282k44w"
