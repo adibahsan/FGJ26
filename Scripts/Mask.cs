@@ -33,10 +33,7 @@ public partial class Mask : Node3D
 		{
 			_playerInZone = player;
 			player.SetNearbyMask(this);
-			if (!player.IsCarryingMask)
-			{
-				GameManager.Instance?.ShowPickupUI(true);
-			}
+			GameManager.Instance?.ShowPickupUI(true);
 		}
 	}
 

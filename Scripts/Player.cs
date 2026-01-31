@@ -28,16 +28,12 @@ public partial class Player : RigidBody3D
 
 	public void PickupMask(Mask mask)
 	{
+		// If already carrying a mask, return it to spawn first
 		if (IsCarryingMask)
 		{
-			GD.Print("Player is already carrying a mask!");
-			return;
-		}
-
-		if (MaskCarryPosition == null)
-		{
-			GD.PrintErr("Player: MaskCarryPosition is not set! Please assign it in the editor.");
-			return;
+			GD.Print($"Returning {CarriedMask.Type} mask to spawn");
+			CarriedMask.ReturnToSpawn();
+			CarriedMask = null;
 		}
 
 		CarriedMask = mask;
@@ -89,18 +85,21 @@ public partial class Player : RigidBody3D
 			return;
 		}
 		
-		if (Input.IsActionJustPressed("interact") && _nearbyMask != null && !IsCarryingMask)
+		if (Input.IsActionJustPressed("interact"))
 		{
-			PickupMask(_nearbyMask);
-			_nearbyMask = null;
-		}
-
-		if (Input.IsActionJustPressed("interact") && _nearbyBedArea != null && IsCarryingMask)
-		{
-			// Store pending mask - will be applied after minigame completes
-			// Mask stays on player until minigame finishes
-			_gameManager.SetPendingMask(CarriedMask, _nearbyBedArea);
-			_gameManager.StartNextMinigame();
+			// Bed interaction takes priority when carrying a mask
+			if (_nearbyBedArea != null && IsCarryingMask)
+			{
+				// Store pending mask - will be applied after minigame completes
+				// Mask stays on player until minigame finishes
+				_gameManager.SetPendingMask(CarriedMask, _nearbyBedArea);
+				_gameManager.StartNextMinigame();
+			}
+			else if (_nearbyMask != null)
+			{
+				PickupMask(_nearbyMask);
+				_nearbyMask = null;
+			}
 		}
 	}
 
