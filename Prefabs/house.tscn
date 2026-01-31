@@ -86,7 +86,7 @@ Bed = NodePath("Bed")
 [node name="Spawnpoint" type="Marker3D" parent="." unique_id=136597774]
 
 [node name="Camera3D" parent="." unique_id=647038774 instance=ExtResource("2_65ldg")]
-transform = Transform3D(1, 0, 0, 0, 0.7111187, 0.7030721, 0, -0.7030721, 0.7111187, 0, 11.75, 12.740425)
+transform = Transform3D(1, 0, 0, 0, 0.67616916, 0.7367465, 0, -0.7367465, 0.67616916, -2.5740595, 11.75, 5.4974375)
 
 [node name="DirectionalLight3D" parent="." unique_id=54087904 instance=ExtResource("3_gjult")]
 transform = Transform3D(1, 0, 0, 0, 0.4203708, 0.9073524, 0, -0.9073524, 0.4203708, 0, 10, 0)
