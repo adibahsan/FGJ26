@@ -19,7 +19,7 @@ size = Vector3(1.0205078, 0.75, 1.2480469)
 
 [node name="ClockAndTable" type="StaticBody3D" unique_id=15099231 node_paths=PackedStringArray("TimeLabel")]
 script = ExtResource("1_ft66k")
-TimeLabel = NodePath("Label3D")
+TimeLabel = NodePath("Node3D/MeshClock/Label3D")
 
 [node name="Node3D" type="Node3D" parent="." unique_id=1189983793]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.57443905, 0)
@@ -29,24 +29,26 @@ material_override = SubResource("StandardMaterial3D_s7exv")
 mesh = ExtResource("1_wmr2d")
 
 [node name="MeshClock" type="MeshInstance3D" parent="Node3D" unique_id=1487444092]
+transform = Transform3D(0.647189, -0.7623296, -3.3322483e-08, 0.7623296, 0.647189, -1.5421858e-08, 3.3322483e-08, -1.5421858e-08, 1, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_ft66k")
 mesh = ExtResource("2_qfffb")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1776810327]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00048828125, 0.375, 0.0041503906)
-shape = SubResource("BoxShape3D_s7exv")
-
-[node name="Label3D" type="Label3D" parent="." unique_id=39503027]
-transform = Transform3D(-3.752522e-08, 0.5128522, -0.8584769, 2.241748e-08, 0.8584769, 0.5128522, 1, 0, -4.371139e-08, -0.07764201, 0.7134401, -2.7083267e-09)
-pixel_size = 0.0055
+[node name="Label3D" type="Label3D" parent="Node3D/MeshClock" unique_id=39503027]
+transform = Transform3D(-3.752522e-08, 0.5128522, -0.8584769, -1, -3.7525215e-08, 2.1293907e-08, -2.1293909e-08, 0.8584769, 0.5128522, -0.07764201, -3.367603e-09, 0.13900107)
+pixel_size = 0.001
 double_sided = false
 outline_modulate = Color(0, 0, 0, 0)
 text = "22:00
 "
 font = ExtResource("4_s7exv")
+font_size = 185
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1776810327]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00048828125, 0.375, 0.0041503906)
+shape = SubResource("BoxShape3D_s7exv")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1770763818]
-transform = Transform3D(0.13, 0, 0, 0, 0.1051602, 0.07642861, 0, -0.07642861, 0.1051602, -0.06985995, 1.1225513, 0.30885267)
+transform = Transform3D(0.13, 0, 0, 0, 0.10517221, 0.07641208, 0, -0.07641208, 0.10517221, -0.06985995, 1.1225513, 0.30885267)
 sprite_frames = ExtResource("6_htxd0")
 autoplay = "default"
 
