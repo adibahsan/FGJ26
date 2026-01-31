@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Snorkkeli_1.wav-db150359852d828b4a1aacd215e39
 [params]
 
 force/8_bit=false
-force/mono=false
+force/mono=true
 force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=true

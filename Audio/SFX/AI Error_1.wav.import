@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/AI Error_1.wav-63ae8d81dab7507fa0d0f5bd0ae85a
 [params]
 
 force/8_bit=false
-force/mono=false
+force/mono=true
 force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=true

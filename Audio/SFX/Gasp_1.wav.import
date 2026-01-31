@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Gasp_1.wav-09467f9bf8533513627a66fd60b4c182.s
 [params]
 
 force/8_bit=false
-force/mono=false
+force/mono=true
 force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=true

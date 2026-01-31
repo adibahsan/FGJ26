@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Koputus_1.wav-a4e3dac20004d0f8dde60fb29a73602
 [params]
 
 force/8_bit=false
-force/mono=false
+force/mono=true
 force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=true

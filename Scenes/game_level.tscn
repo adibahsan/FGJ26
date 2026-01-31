@@ -10,6 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://cdplpx4r222di" path="res://UI/ui_place_mask.tscn" id="6_mql7d"]
 [ext_resource type="PackedScene" uid="uid://dkoylyty766ik" path="res://UI/ui_score.tscn" id="7_5x8s8"]
 [ext_resource type="Script" uid="uid://ba4wxun3ubukf" path="res://Scripts/EventSystem.cs" id="8_g3g87"]
+[ext_resource type="AudioStream" uid="uid://drsyoevcloq6v" path="res://Audio/NukkumaskiOST_Gameplay1_SAT_LAI.mp3" id="11_mxr21"]
+[ext_resource type="Script" uid="uid://g25ed8xgy3y2" path="res://Scripts/PlayerAudio.cs" id="11_rn1up"]
+[ext_resource type="AudioStream" uid="uid://cm7vxocqcb6o5" path="res://Audio/NukkumaskiOST_Gameplay2_SAT_LAI.mp3" id="12_11ucq"]
+[ext_resource type="AudioStream" uid="uid://dn0jrx8ewtvv0" path="res://Audio/NukkumaskiOST_Gameplay3_SAT_LAI.mp3" id="13_rn1up"]
 
 [node name="GameLevel" type="Node3D" unique_id=1811580237 node_paths=PackedStringArray("PickupUIElement", "SetMaskUIElement", "SleepBarUI", "ScoreUI")]
 script = ExtResource("1_jcjmw")
@@ -20,6 +24,7 @@ PickupUIElement = NodePath("UiPickUp")
 SetMaskUIElement = NodePath("UiPlaceMask")
 SleepBarUI = NodePath("UiSleepBar")
 ScoreUI = NodePath("UiScore")
+SleepDrainRate = 5.0
 NightDurationSeconds = 120.0
 
 [node name="UiPickUp" parent="." unique_id=1815324665 instance=ExtResource("4_u7uub")]
@@ -30,5 +35,25 @@ NightDurationSeconds = 120.0
 
 [node name="UiScore" parent="." unique_id=122718852 instance=ExtResource("7_5x8s8")]
 
-[node name="Node" type="Node" parent="." unique_id=1421593516]
+[node name="EventSystem" type="Node" parent="." unique_id=1421593516]
 script = ExtResource("8_g3g87")
+
+[node name="Audio" type="Node" parent="." unique_id=326756595 node_paths=PackedStringArray("MusicPlayers")]
+script = ExtResource("11_rn1up")
+MusicPlayers = [NodePath("MusicPlayer1"), NodePath("MusicPlayer2"), NodePath("MusicPlayer3")]
+
+[node name="MusicPlayer1" type="AudioStreamPlayer" parent="Audio" unique_id=933964001]
+stream = ExtResource("11_mxr21")
+autoplay = true
+
+[node name="MusicPlayer2" type="AudioStreamPlayer" parent="Audio" unique_id=1659721524]
+stream = ExtResource("12_11ucq")
+volume_db = -80.0
+autoplay = true
+
+[node name="MusicPlayer3" type="AudioStreamPlayer" parent="Audio" unique_id=617690251]
+stream = ExtResource("13_rn1up")
+volume_db = -80.0
+autoplay = true
+
+[node name="SfxPlayer" type="AudioStreamPlayer" parent="Audio" unique_id=606637529]
