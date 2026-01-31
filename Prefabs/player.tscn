@@ -4,6 +4,9 @@
 [ext_resource type="ArrayMesh" uid="uid://dbak7ukx88jm" path="res://Assets/Characters/Human.res" id="2_5wxv7"]
 [ext_resource type="Material" uid="uid://3cf3pesmxqwp" path="res://Assets/Materials/HumanMaterial.tres" id="2_y5hcb"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_y5hcb"]
+friction = 0.0
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3icqa"]
 
 [node name="Player" type="RigidBody3D" unique_id=1977189581 node_paths=PackedStringArray("MaskCarryPosition")]
@@ -11,6 +14,8 @@ axis_lock_linear_y = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
+physics_material_override = SubResource("PhysicsMaterial_y5hcb")
+can_sleep = false
 script = ExtResource("1_player")
 Acceleration = 100.0
 Deceleration = 100.0
