@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b1aob6gs6un0j" path="res://Scenes/minigame_spammer.tscn" id="4_g3g87"]
 [ext_resource type="PackedScene" uid="uid://ulnwd5m7wivq" path="res://UI/ui_pick_up.tscn" id="4_u7uub"]
 [ext_resource type="PackedScene" uid="uid://bit4xtq1g0rxw" path="res://UI/ui_sleep_bar.tscn" id="5_6mi8o"]
+[ext_resource type="PackedScene" uid="uid://dga0cp0ivh4pw" path="res://Scenes/minigame_typer.tscn" id="5_e38tf"]
 [ext_resource type="PackedScene" uid="uid://cdplpx4r222di" path="res://UI/ui_place_mask.tscn" id="6_mql7d"]
 [ext_resource type="PackedScene" uid="uid://dkoylyty766ik" path="res://UI/ui_score.tscn" id="7_5x8s8"]
 [ext_resource type="Script" uid="uid://ba4wxun3ubukf" path="res://Scripts/EventSystem.cs" id="8_g3g87"]
@@ -14,7 +15,7 @@
 script = ExtResource("1_jcjmw")
 HouseScene = ExtResource("2_ht4rx")
 PlayerScene = ExtResource("3_u7uub")
-spammerScene = ExtResource("4_g3g87")
+MinigameScenes = Array[PackedScene]([ExtResource("4_g3g87"), ExtResource("5_e38tf")])
 PickupUIElement = NodePath("UiPickUp")
 SetMaskUIElement = NodePath("UiPlaceMask")
 SleepBarUI = NodePath("UiSleepBar")
