@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bit4xtq1g0rxw"]
 
 [ext_resource type="Script" uid="uid://cg300i4l4ms7" path="res://Scripts/UiSleepBar.cs" id="1_uvfiw"]
+[ext_resource type="Theme" uid="uid://d2fp7y8bgh7jy" path="res://Themes/ui_font_main_theme.tres" id="2_fiaf1"]
 
 [sub_resource type="Theme" id="Theme_d06xk"]
 
@@ -47,5 +48,19 @@ offset_left = -20.0
 offset_right = 20.0
 offset_bottom = 23.0
 grow_horizontal = 2
+theme = ExtResource("2_fiaf1")
 text = "Sleep-O-Meter"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="HSlider/Label" unique_id=1511912467]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 85.79993
+offset_right = 34.799927
+offset_bottom = 23.0
+grow_horizontal = 2
+theme = ExtResource("2_fiaf1")
+theme_override_font_sizes/font_size = 12
+text = "TM"
 horizontal_alignment = 1
