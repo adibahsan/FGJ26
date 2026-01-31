@@ -91,8 +91,6 @@ public partial class EventSystem : Node
 	{
 		GD.Print($"EventSystem: Ended {_currentEventType} event");
 		
-		ReturnEquippedMaskToSpawn();
-		
 		if(_currentEventType == MaskType.Cooling)
 		{
 			RadiatorRoot.Instance.EnableAnimation(false);
@@ -117,10 +115,5 @@ public partial class EventSystem : Node
 	private float GetRandomDuration()
 	{
 		return (float)(_random.NextDouble() * (MaxEventDuration - MinEventDuration) + MinEventDuration);
-	}
-
-	private void ReturnEquippedMaskToSpawn()
-	{
-		GameManager.Instance?.ClearBedMask();
 	}
 }
