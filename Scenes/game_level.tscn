@@ -6,16 +6,21 @@
 [ext_resource type="PackedScene" uid="uid://ulnwd5m7wivq" path="res://UI/ui_pick_up.tscn" id="4_u7uub"]
 [ext_resource type="PackedScene" uid="uid://bit4xtq1g0rxw" path="res://UI/ui_sleep_bar.tscn" id="5_6mi8o"]
 [ext_resource type="PackedScene" uid="uid://cdplpx4r222di" path="res://UI/ui_place_mask.tscn" id="6_mql7d"]
+[ext_resource type="PackedScene" uid="uid://dkoylyty766ik" path="res://UI/ui_score.tscn" id="7_5x8s8"]
 
-[node name="GameLevel" type="Node3D" unique_id=1811580237 node_paths=PackedStringArray("PickupUIElement", "SetMaskUIElement")]
+[node name="GameLevel" type="Node3D" unique_id=1811580237 node_paths=PackedStringArray("PickupUIElement", "SetMaskUIElement", "SleepBarUI", "ScoreUI")]
 script = ExtResource("1_jcjmw")
 HouseScene = ExtResource("2_ht4rx")
 PlayerScene = ExtResource("3_u7uub")
 PickupUIElement = NodePath("UiPickUp")
 SetMaskUIElement = NodePath("UiPlaceMask")
+SleepBarUI = NodePath("UiSleepBar")
+ScoreUI = NodePath("UiScore")
 
 [node name="UiPickUp" parent="." unique_id=1815324665 instance=ExtResource("4_u7uub")]
 
 [node name="UiSleepBar" parent="." unique_id=617199542 instance=ExtResource("5_6mi8o")]
 
 [node name="UiPlaceMask" parent="." unique_id=364919443 instance=ExtResource("6_mql7d")]
+
+[node name="UiScore" parent="." unique_id=122718852 instance=ExtResource("7_5x8s8")]

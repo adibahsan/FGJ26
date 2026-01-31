@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dkoylyty766ik"]
+
+[ext_resource type="Script" uid="uid://c8uau36eq2w5c" path="res://Scripts/UiScore.cs" id="1_44yge"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7is0w"]
+font_size = 32
+
+[node name="UiScore" type="Control" unique_id=1815324665 node_paths=PackedStringArray("ScoreLabel")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_44yge")
+ScoreLabel = NodePath("HBoxContainer/Score")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1724644699]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.025
+anchor_right = 0.1
+anchor_bottom = 0.025
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Header" type="Label" parent="HBoxContainer" unique_id=851380015]
+layout_mode = 2
+text = "Score:"
+label_settings = SubResource("LabelSettings_7is0w")
+
+[node name="Score" type="Label" parent="HBoxContainer" unique_id=462358447]
+layout_mode = 2
+text = "9999999"
+label_settings = SubResource("LabelSettings_7is0w")

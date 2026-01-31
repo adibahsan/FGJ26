@@ -13,9 +13,10 @@ albedo_color = Color(2.4065375e-07, 0.39114994, 0.16083744, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_ahg4q"]
 size = Vector3(20, 1, 20)
 
-[node name="House" type="Node3D" unique_id=958063721 node_paths=PackedStringArray("Spawnpoint")]
+[node name="House" type="Node3D" unique_id=958063721 node_paths=PackedStringArray("Spawnpoint", "Bed")]
 script = ExtResource("1_house")
 Spawnpoint = NodePath("Spawnpoint")
+Bed = NodePath("Bed")
 
 [node name="Floor" type="MeshInstance3D" parent="." unique_id=1304518926]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)

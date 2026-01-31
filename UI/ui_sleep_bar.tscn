@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://bit4xtq1g0rxw"]
 
+[ext_resource type="Script" uid="uid://cg300i4l4ms7" path="res://Scripts/UiSleepBar.cs" id="1_uvfiw"]
+
 [sub_resource type="Theme" id="Theme_d06xk"]
 
 [sub_resource type="DPITexture" id="DPITexture_d06xk"]
@@ -8,13 +10,15 @@
 
 [sub_resource type="DPITexture" id="DPITexture_fiaf1"]
 
-[node name="UiSleepBar" type="Control" unique_id=617199542]
+[node name="UiSleepBar" type="Control" unique_id=617199542 node_paths=PackedStringArray("Slider")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_uvfiw")
+Slider = NodePath("HSlider")
 
 [node name="HSlider" type="HSlider" parent="." unique_id=2016136631]
 layout_mode = 1
@@ -30,6 +34,7 @@ theme = SubResource("Theme_d06xk")
 theme_override_icons/grabber = SubResource("DPITexture_d06xk")
 theme_override_icons/grabber_highlight = SubResource("DPITexture_uvfiw")
 theme_override_icons/grabber_disabled = SubResource("DPITexture_fiaf1")
+step = 0.0
 value = 30.0
 editable = false
 scrollable = false
