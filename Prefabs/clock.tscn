@@ -2,9 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dfn5nqph7n8fc" path="res://Scripts/Clock.cs" id="1_ft66k"]
 [ext_resource type="Texture2D" uid="uid://dex43pfqf5tet" path="res://Assets/Textures/KelloJaTable_BaseColor.png" id="1_qfffb"]
-[ext_resource type="ArrayMesh" uid="uid://bghhmdoxgu222" path="res://Assets/Environment/Kello_Table.res" id="1_wmr2d"]
-[ext_resource type="ArrayMesh" uid="uid://bmvlxkjfj4dud" path="res://Assets/Environment/Kello_001.res" id="2_qfffb"]
+[ext_resource type="ArrayMesh" uid="uid://5rroosmb88qu" path="res://Assets/Environment/Kello_Table.res" id="1_wmr2d"]
+[ext_resource type="ArrayMesh" uid="uid://lu7tssk8lt83" path="res://Assets/Environment/Kello_001.res" id="2_qfffb"]
 [ext_resource type="FontFile" uid="uid://tipdjs6uqlih" path="res://Assets/Fonts/NovaMono-Regular.ttf" id="4_s7exv"]
+[ext_resource type="SpriteFrames" uid="uid://clpl1ajmh6a3r" path="res://Assets/Animations/FX_Sparkles_01.tres" id="6_htxd0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s7exv"]
 albedo_texture = ExtResource("1_qfffb")
@@ -42,3 +43,8 @@ outline_modulate = Color(0, 0, 0, 0)
 text = "22:00
 "
 font = ExtResource("4_s7exv")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1770763818]
+transform = Transform3D(0.13, 0, 0, 0, 0.1051602, 0.07642861, 0, -0.07642861, 0.1051602, -0.06985995, 1.1225513, 0.30885267)
+sprite_frames = ExtResource("6_htxd0")
+autoplay = "default"

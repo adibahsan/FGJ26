@@ -1,0 +1,50 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://clpl1ajmh6a3r"]
+
+[ext_resource type="Texture2D" uid="uid://qugybftaapcf" path="res://Assets/Animations/FX_Sparkles/fx_sparkle0000.png" id="1_7jqlb"]
+[ext_resource type="Texture2D" uid="uid://ced8gujidjm2" path="res://Assets/Animations/FX_Sparkles/fx_sparkle0001.png" id="2_1opr8"]
+[ext_resource type="Texture2D" uid="uid://dxyyec27n1k0d" path="res://Assets/Animations/FX_Sparkles/fx_sparkle0002.png" id="3_m2ami"]
+[ext_resource type="Texture2D" uid="uid://pxrcryh76aug" path="res://Assets/Animations/FX_Sparkles/fx_sparkle0003.png" id="4_tbwtr"]
+[ext_resource type="Texture2D" uid="uid://cjps71y76iug0" path="res://Assets/Animations/FX_Sparkles/fx_sparkle0004.png" id="5_260ql"]
+[ext_resource type="Texture2D" uid="uid://bou0rd7qa6p0o" path="res://Assets/Animations/FX_Sparkles/fx_sparkle0005.png" id="6_8tcn5"]
+[ext_resource type="Texture2D" uid="uid://ccpjv04sb288r" path="res://Assets/Animations/FX_Sparkles/fx_sparkle0006.png" id="7_je0cd"]
+[ext_resource type="Texture2D" uid="uid://3fvwrcj2h2vv" path="res://Assets/Animations/FX_Sparkles/fx_sparkle0007.png" id="8_2xrex"]
+[ext_resource type="Texture2D" uid="uid://bwrci2w8nr0sj" path="res://Assets/Animations/FX_Sparkles/fx_sparkle0008.png" id="9_l1dks"]
+[ext_resource type="Texture2D" uid="uid://oprxmndqb41f" path="res://Assets/Animations/FX_Sparkles/fx_sparkle0009.png" id="10_rksmn"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7jqlb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1opr8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_m2ami")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_tbwtr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_260ql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8tcn5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_je0cd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_2xrex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_l1dks")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_rksmn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 16.0
+}]
