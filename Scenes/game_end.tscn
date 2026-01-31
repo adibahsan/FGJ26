@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dc8wwp062kayr"]
 
-[ext_resource type="Texture2D" uid="uid://bkxk2jsnbmibh" path="res://Assets/MainmenuBG.png" id="1_cmq3e"]
 [ext_resource type="Script" uid="uid://cf6vk022dbqqy" path="res://Scripts/GameOver.cs" id="1_wiu0u"]
+[ext_resource type="Texture2D" uid="uid://er1gesou4eff" path="res://Assets/UI/UI_BG_02.png" id="2_3qf0w"]
 [ext_resource type="FontFile" uid="uid://cpwhbheucfmak" path="res://Assets/Fonts/ComicNeue-Bold.ttf" id="3_3qf0w"]
 [ext_resource type="Texture2D" uid="uid://d086nxg163dne" path="res://Assets/UI/UI_MinigameBG_01.png" id="4_83bs5"]
 [ext_resource type="Texture2D" uid="uid://dngdx6qeic76e" path="res://Assets/UI/UI_ButtonBG_01.png" id="5_kf68x"]
@@ -32,7 +32,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_cmq3e")
+texture = ExtResource("2_3qf0w")
+expand_mode = 1
 
 [node name="HBoxContainer_gameOver" type="HBoxContainer" parent="." unique_id=1567551722]
 layout_mode = 1
@@ -60,7 +61,7 @@ offset_top = 24.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_853f1")
-theme_override_colors/font_color = Color(0.6039216, 0.6039216, 0.70980394, 1)
+theme_override_colors/font_color = Color(0.42352942, 0.41568628, 0.5921569, 1)
 theme_override_fonts/font = ExtResource("3_3qf0w")
 text = "Game Over"
 horizontal_alignment = 1
@@ -89,10 +90,16 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = 38.0
+offset_right = 9.0
+offset_bottom = 38.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_853f1")
-theme_override_colors/font_color = Color(0.17072427, 0.16985181, 0.22814149, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.42352942, 0.41568628, 0.5921569, 1)
+theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("3_3qf0w")
 theme_override_font_sizes/font_size = 32
 text = "Morning came and they’re still asleep.
@@ -108,10 +115,16 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = 27.0
+offset_right = -5.0
+offset_bottom = 56.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_853f1")
-theme_override_colors/font_color = Color(0.17072427, 0.16985181, 0.22814149, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.42352942, 0.41568628, 0.5921569, 1)
+theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("3_3qf0w")
 theme_override_font_sizes/font_size = 32
 text = "Too much noise, too much chaos,
@@ -132,16 +145,18 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -85.5
-offset_top = -18.5
+offset_top = 16.0
 offset_right = 85.5
-offset_bottom = 18.5
+offset_bottom = 53.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="HBoxContainer_gameOver/VBoxContainer/Score/HBoxContainer" unique_id=1688171098]
 layout_mode = 2
 theme = SubResource("Theme_853f1")
-theme_override_colors/font_color = Color(0.17072427, 0.16985181, 0.22814149, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.42352942, 0.41568628, 0.5921569, 1)
+theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("3_3qf0w")
 theme_override_font_sizes/font_size = 32
 text = "Score:"
@@ -150,7 +165,9 @@ horizontal_alignment = 1
 [node name="LabelScore" type="Label" parent="HBoxContainer_gameOver/VBoxContainer/Score/HBoxContainer" unique_id=457018125]
 layout_mode = 2
 theme = SubResource("Theme_853f1")
-theme_override_colors/font_color = Color(0.17072427, 0.16985181, 0.22814149, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.42352942, 0.41568628, 0.5921569, 1)
+theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("3_3qf0w")
 theme_override_font_sizes/font_size = 32
 text = "99999"
@@ -162,11 +179,11 @@ layout_mode = 2
 
 [node name="StartText" type="Label" parent="HBoxContainer_gameOver/VBoxContainer/StartButtonParent" unique_id=159311159]
 layout_mode = 0
-offset_left = 55.0
-offset_top = 70.0
-offset_right = 168.0
-offset_bottom = 133.0
-theme_override_colors/font_color = Color(0.6039216, 0.6039216, 0.70980394, 1)
+offset_left = 15.0
+offset_top = 49.0
+offset_right = 179.0
+offset_bottom = 112.0
+theme_override_colors/font_color = Color(0.42352942, 0.41568628, 0.5921569, 1)
 theme_override_fonts/font = ExtResource("3_3qf0w")
 theme_override_font_sizes/font_size = 54
 text = "Restart"
@@ -186,10 +203,10 @@ modulate = Color(1, 1, 1, 0)
 self_modulate = Color(1, 1, 1, 0)
 material = SubResource("CanvasItemMaterial_df05h")
 layout_mode = 0
-offset_left = 4.0
-offset_top = 47.0
-offset_right = 240.0
-offset_bottom = 150.0
+offset_left = -36.0
+offset_top = 26.0
+offset_right = 200.0
+offset_bottom = 129.0
 theme_override_colors/font_color = Color(0.6039216, 0.6039216, 0.70980394, 1)
 theme_override_fonts/font = ExtResource("3_3qf0w")
 theme_override_font_sizes/font_size = 60
@@ -201,11 +218,11 @@ layout_mode = 2
 
 [node name="QuitText" type="Label" parent="HBoxContainer_gameOver/VBoxContainer/QuitButtonParent" unique_id=2122030392]
 layout_mode = 0
-offset_left = 359.0
-offset_top = 12.0
-offset_right = 472.0
-offset_bottom = 75.0
-theme_override_colors/font_color = Color(0.6039216, 0.6039216, 0.70980394, 1)
+offset_left = 353.0
+offset_top = -10.0
+offset_right = 466.0
+offset_bottom = 53.0
+theme_override_colors/font_color = Color(0.42352942, 0.41568628, 0.5921569, 1)
 theme_override_fonts/font = ExtResource("3_3qf0w")
 theme_override_font_sizes/font_size = 54
 text = "Quit"
@@ -225,9 +242,9 @@ flip_h = true
 modulate = Color(1, 1, 1, 0)
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 304.0
-offset_top = -11.0
-offset_right = 550.0
-offset_bottom = 87.0
+offset_left = 298.0
+offset_top = -33.0
+offset_right = 544.0
+offset_bottom = 65.0
 theme_override_font_sizes/font_size = 65
 text = "Quit"
