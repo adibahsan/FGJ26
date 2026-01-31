@@ -1,13 +1,15 @@
 [gd_scene format=3 uid="uid://dwayruujhu53i"]
 
 [ext_resource type="Script" uid="uid://dnem3n4qma6cg" path="res://Scripts/Player.cs" id="1_player"]
-[ext_resource type="ArrayMesh" uid="uid://dbak7ukx88jm" path="res://Assets/Characters/Human.res" id="2_5wxv7"]
-[ext_resource type="Material" uid="uid://3cf3pesmxqwp" path="res://Assets/Materials/HumanMaterial.tres" id="2_y5hcb"]
+[ext_resource type="Material" path="res://Assets/Materials/ElfMaterial.tres" id="2_y5hcb"]
+[ext_resource type="ArrayMesh" uid="uid://bmi335odttgvb" path="res://Assets/Characters/ElfAnimed_Cube_012.res" id="3_y5hcb"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_y5hcb"]
 friction = 0.0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3icqa"]
+radius = 0.25
+height = 1.25
 
 [node name="Player" type="RigidBody3D" unique_id=1977189581 node_paths=PackedStringArray("MaskCarryPosition")]
 axis_lock_linear_y = true
@@ -22,13 +24,13 @@ Deceleration = 100.0
 MaskCarryPosition = NodePath("MaskCarryPos")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2115608348]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.625, 0)
 shape = SubResource("CapsuleShape3D_3icqa")
 
 [node name="MaskCarryPos" type="Node3D" parent="." unique_id=2146350170]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1.25)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, -2)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=881148187]
-transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, 0, 0, 0)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 material_override = ExtResource("2_y5hcb")
-mesh = ExtResource("2_5wxv7")
+mesh = ExtResource("3_y5hcb")
