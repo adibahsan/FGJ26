@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://dsytb6v8kkmbi"]
 
-[ext_resource type="Script" uid="uid://dbyhxywx0xmm4" path="res://Scripts/Stove.cs" id="1_l30xj"]
+[ext_resource type="Script" uid="uid://ckx3ag7hpmoav" path="res://Scripts/EventEnabler.cs" id="1_l30xj"]
 [ext_resource type="ArrayMesh" uid="uid://c4hcnepp5fe53" path="res://Assets/Environment/Stove_001.res" id="1_qlxa1"]
-[ext_resource type="SpriteFrames" path="res://Assets/Animations/FX_HeatRadiation.tres" id="2_i81m4"]
+[ext_resource type="SpriteFrames" uid="uid://jqq0323td5pv" path="res://Assets/Animations/FX_HeatRadiation.tres" id="2_i81m4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_todqe"]
 size = Vector3(0.9009094, 0.8411865, 0.81192017)
 
-[node name="Stove" type="StaticBody3D" unique_id=1920436334 node_paths=PackedStringArray("GasAnimation")]
+[node name="Stove" type="StaticBody3D" unique_id=1920436334 node_paths=PackedStringArray("VisualEffect")]
 script = ExtResource("1_l30xj")
-GasAnimation = NodePath("AnimatedSprite3D")
+VisualEffect = NodePath("AnimatedSprite3D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1677661318]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)

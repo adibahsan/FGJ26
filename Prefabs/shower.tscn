@@ -1,14 +1,18 @@
 [gd_scene format=3 uid="uid://bu1knilu01d6n"]
 
+[ext_resource type="Script" uid="uid://ckx3ag7hpmoav" path="res://Scripts/EventEnabler.cs" id="1_5044b"]
 [ext_resource type="ArrayMesh" uid="uid://jll114xljbl7" path="res://Assets/Environment/Suihku.res" id="1_ap0tu"]
 [ext_resource type="Texture2D" uid="uid://ccrhfu57hpy5o" path="res://Assets/Textures/VessaTavara.png" id="2_j0ml5"]
-[ext_resource type="SpriteFrames" uid="uid://cwpucss3vqs1f" path="res://Assets/Animations/FX_WaterLeak.tres" id="3_j0ml5"]
+[ext_resource type="SpriteFrames" path="res://Assets/Animations/FX_WaterLeak.tres" id="3_j0ml5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n4x5a"]
 albedo_color = Color(0.8776157, 0.8776158, 0.8776157, 1)
 albedo_texture = ExtResource("2_j0ml5")
 
-[node name="Shower" type="Node3D" unique_id=1407426939]
+[node name="Shower" type="Node3D" unique_id=1407426939 node_paths=PackedStringArray("VisualEffect")]
+script = ExtResource("1_5044b")
+EventType = 5
+VisualEffect = NodePath("AnimatedSprite3D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1677661318]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1.4979082, 0)

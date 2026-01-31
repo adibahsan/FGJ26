@@ -6,6 +6,7 @@
 [ext_resource type="ArrayMesh" uid="uid://lu7tssk8lt83" path="res://Assets/Environment/Kello_001.res" id="2_qfffb"]
 [ext_resource type="FontFile" uid="uid://tipdjs6uqlih" path="res://Assets/Fonts/NovaMono-Regular.ttf" id="4_s7exv"]
 [ext_resource type="SpriteFrames" uid="uid://clpl1ajmh6a3r" path="res://Assets/Animations/FX_Sparkles_01.tres" id="6_htxd0"]
+[ext_resource type="Script" uid="uid://ckx3ag7hpmoav" path="res://Scripts/EventEnabler.cs" id="7_owkam"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s7exv"]
 albedo_texture = ExtResource("1_qfffb")
@@ -48,3 +49,8 @@ font = ExtResource("4_s7exv")
 transform = Transform3D(0.13, 0, 0, 0, 0.1051602, 0.07642861, 0, -0.07642861, 0.1051602, -0.06985995, 1.1225513, 0.30885267)
 sprite_frames = ExtResource("6_htxd0")
 autoplay = "default"
+
+[node name="Node" type="Node3D" parent="." unique_id=601558915 node_paths=PackedStringArray("VisualEffect")]
+script = ExtResource("7_owkam")
+EventType = 8
+VisualEffect = NodePath("../AnimatedSprite3D")
