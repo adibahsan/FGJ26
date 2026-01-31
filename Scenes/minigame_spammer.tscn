@@ -3,35 +3,54 @@
 [ext_resource type="Script" uid="uid://cne3x38odd3s4" path="res://Scripts/MinigameSpammer.cs" id="1_f57bn"]
 [ext_resource type="Texture2D" uid="uid://34yw01dd1k2o" path="res://Assets/Textures/BarQ.png" id="2_6igo4"]
 [ext_resource type="Texture2D" uid="uid://cyjukquf05l0u" path="res://Assets/Textures/BarBackground.png" id="3_trhb4"]
+[ext_resource type="Theme" uid="uid://dhdi1ka7qfrlc" path="res://Themes/ui_font_theme.tres" id="4_trhb4"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cl8fa"]
 texture = ExtResource("2_6igo4")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oh8kn"]
 texture = ExtResource("3_trhb4")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
 
 [node name="MinigameSpammer" type="Control" unique_id=1961733606 node_paths=PackedStringArray("UiObject")]
 layout_mode = 3
-anchors_preset = 0
-offset_left = 1.0
-offset_right = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_f57bn")
 UiObject = NodePath("ProgressBar")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=392928146]
+custom_minimum_size = Vector2(360, 60)
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 16.0
-offset_top = 13.0
-offset_right = 316.0
-offset_bottom = 73.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
+theme = ExtResource("4_trhb4")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
 theme_override_styles/background = SubResource("StyleBoxTexture_cl8fa")
 theme_override_styles/fill = SubResource("StyleBoxTexture_oh8kn")
 max_value = 1.0
 value = 0.5
+
+[node name="Label" type="Label" parent="ProgressBar" unique_id=1606259440]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -60.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_trhb4")
+text = "Späm the E key"
+horizontal_alignment = 1
+vertical_alignment = 2

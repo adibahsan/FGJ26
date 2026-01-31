@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://dhdi1ka7qfrlc"]
+
+[ext_resource type="FontFile" uid="uid://tipdjs6uqlih" path="res://Assets/Fonts/NovaMono-Regular.ttf" id="1_7dvds"]
+
+[resource]
+default_font = ExtResource("1_7dvds")
+default_font_size = 32
