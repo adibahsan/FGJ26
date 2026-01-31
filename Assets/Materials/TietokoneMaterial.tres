@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bfgg1x0ynf7r2"]
+
+[ext_resource type="Texture2D" uid="uid://bkmy2y6hsf4o0" path="res://Assets/Textures/Tietokone_BaseColor.png" id="1_oqop0"]
+
+[resource]
+albedo_texture = ExtResource("1_oqop0")
