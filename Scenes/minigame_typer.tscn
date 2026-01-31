@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://dga0cp0ivh4pw"]
+
+[ext_resource type="Script" uid="uid://ccn1h26gfyokk" path="res://Scripts/MinigameTyper.cs" id="1_dk1af"]
+[ext_resource type="FontFile" uid="uid://tipdjs6uqlih" path="res://Assets/Fonts/NovaMono-Regular.ttf" id="1_lrgky"]
+
+[sub_resource type="Theme" id="Theme_dk1af"]
+default_font = ExtResource("1_lrgky")
+
+[node name="MinigameTyper" type="Control" unique_id=483290457 node_paths=PackedStringArray("WordLabel", "TypedLabel")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1.0
+offset_right = 1.0
+script = ExtResource("1_dk1af")
+WordLabel = NodePath("VBoxContainer/LabelWord")
+TypedLabel = NodePath("VBoxContainer/LabelWord/LabelTyped")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1205979357]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=535078248]
+layout_mode = 2
+text = "Type following word:"
+
+[node name="LabelWord" type="Label" parent="VBoxContainer" unique_id=282411150]
+layout_mode = 2
+theme = SubResource("Theme_dk1af")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+text = "unimaski"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="LabelTyped" type="Label" parent="VBoxContainer/LabelWord" unique_id=813986955]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0.80784315, 0, 1)
+text = "unim    "
+horizontal_alignment = 1
+uppercase = true
