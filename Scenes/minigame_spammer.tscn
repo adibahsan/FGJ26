@@ -10,12 +10,16 @@ texture = ExtResource("2_6igo4")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oh8kn"]
 texture = ExtResource("3_trhb4")
 
-[node name="MinigameSpammer" type="Node2D" unique_id=790891921 node_paths=PackedStringArray("UiObject")]
-position = Vector2(1, 0)
+[node name="MinigameSpammer" type="Control" unique_id=1961733606 node_paths=PackedStringArray("UiObject")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1.0
+offset_right = 1.0
 script = ExtResource("1_f57bn")
 UiObject = NodePath("ProgressBar")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=392928146]
+layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0

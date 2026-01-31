@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class MinigameBase : Node
+public partial class MinigameBase : Control
 {
 	/// <summary>
 	/// Called when the minigame should become active (show UI, start timers, enable input, etc).
