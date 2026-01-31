@@ -77,6 +77,11 @@ public partial class EventSystem : Node
 		_currentEventDuration = GetRandomDuration();
 		_eventTimer = _currentEventDuration;
 		_eventActive = true;
+		
+		if(_currentEventType == MaskType.Cooling)
+		{
+			RadiatorRoot.Instance.EnableAnimation(true);
+		}
 
 		GameManager.Instance?.SetEvent(_currentEventType);
 		GD.Print($"EventSystem: Started {_currentEventType} event (duration: {_currentEventDuration:F1}s, {_eventQueue.Count} remaining)");
@@ -87,6 +92,11 @@ public partial class EventSystem : Node
 		GD.Print($"EventSystem: Ended {_currentEventType} event");
 		
 		ReturnEquippedMaskToSpawn();
+		
+		if(_currentEventType == MaskType.Cooling)
+		{
+			RadiatorRoot.Instance.EnableAnimation(false);
+		}
 		
 		GameManager.Instance?.ClearEvent();
 		_currentEventType = MaskType.None;
