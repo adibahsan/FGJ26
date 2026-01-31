@@ -34,6 +34,21 @@ Before starting any work, read the [PLAN.md](./PLAN.md) file to understand the g
 - Use signals for decoupled communication between nodes
 - **Never search for nodes or scripts by name** - Names can change and break code. Instead, use `[Export]` references set in the editor. Create wrapper scripts with exported node references when you need to access child nodes from external scripts.
 
+### Do Not Edit Godot Files Directly
+
+**Never edit the following files directly** - they contain UIDs, resource references, and formatting that Godot manages internally. Editing these files externally will break the project:
+
+- Scene files (`.tscn`)
+- Resource files (`.tres`)
+- Import files (`.import`)
+- Project settings (`project.godot`)
+
+Instead, **provide clear instructions** for the developer to make these changes in the Godot editor:
+- Describe which nodes to add/modify and their properties
+- List input actions to add in Project Settings > Input Map
+- Specify which scripts to attach to which nodes
+- Detail any exported properties that need to be set in the inspector
+
 ### No Hardcoding
 
 - **Never hardcode asset/file references** - Use `[Export]` and tell the developer to set references in the editor
