@@ -2,30 +2,69 @@ using Godot;
 
 public partial class Player : RigidBody3D
 {
-	/// <summary>
-	/// Movement speed of the player.
-	/// </summary>
 	[Export] public float MoveSpeed { get; set; } = 10.0f;
-
-	/// <summary>
-	/// If true, use acceleration/deceleration. If false, movement is instant.
-	/// </summary>
 	[Export] public bool UseAcceleration { get; set; } = true;
-
-	/// <summary>
-	/// How quickly the player reaches target velocity. Only used when UseAcceleration is true.
-	/// </summary>
 	[Export] public float Acceleration { get; set; } = 50.0f;
-
-	/// <summary>
-	/// How quickly the player slows down when not moving. Only used when UseAcceleration is true.
-	/// </summary>
 	[Export] public float Deceleration { get; set; } = 30.0f;
-
-	/// <summary>
-	/// How quickly the player rotates toward the movement direction (radians per second).
-	/// </summary>
 	[Export] public float RotationSpeed { get; set; } = 10.0f;
+	[Export] public Node3D MaskCarryPosition { get; set; }
+
+	public Mask CarriedMask { get; private set; }
+	public bool IsCarryingMask => CarriedMask != null;
+
+	private Mask _nearbyMask;
+
+	public void PickupMask(Mask mask)
+	{
+		if (IsCarryingMask)
+		{
+			GD.Print("Player is already carrying a mask!");
+			return;
+		}
+
+		if (MaskCarryPosition == null)
+		{
+			GD.PrintErr("Player: MaskCarryPosition is not set! Please assign it in the editor.");
+			return;
+		}
+
+		CarriedMask = mask;
+		mask.OnPickedUp(this);
+		GD.Print($"Picked up {mask.Type} mask");
+	}
+
+	public void DropMask()
+	{
+		if (!IsCarryingMask)
+		{
+			return;
+		}
+
+		GD.Print($"Dropped {CarriedMask.Type} mask");
+		CarriedMask = null;
+	}
+
+	public void SetNearbyMask(Mask mask)
+	{
+		_nearbyMask = mask;
+	}
+
+	public void ClearNearbyMask(Mask mask)
+	{
+		if (_nearbyMask == mask)
+		{
+			_nearbyMask = null;
+		}
+	}
+
+	public override void _Process(double delta)
+	{
+		if (Input.IsActionJustPressed("pick_up") && _nearbyMask != null && !IsCarryingMask)
+		{
+			PickupMask(_nearbyMask);
+			_nearbyMask = null;
+		}
+	}
 
 	public override void _PhysicsProcess(double delta)
 	{
@@ -37,24 +76,20 @@ public partial class Player : RigidBody3D
 	private void HandleMovement(Vector3 inputDir, float delta)
 	{
 		Vector3 targetVelocity = inputDir * MoveSpeed;
-
 		Vector3 currentVelocity = LinearVelocity;
 		Vector3 newHorizontalVelocity;
 
 		if (UseAcceleration)
 		{
-			// Movement with acceleration/deceleration
 			Vector3 horizontalVelocity = new Vector3(currentVelocity.X, 0, currentVelocity.Z);
 			float accel = inputDir.LengthSquared() > 0 ? Acceleration : Deceleration;
 			newHorizontalVelocity = horizontalVelocity.MoveToward(targetVelocity, accel * delta);
 		}
 		else
 		{
-			// Instant movement
 			newHorizontalVelocity = targetVelocity;
 		}
 
-		// Apply the new velocity, preserving any vertical velocity
 		LinearVelocity = new Vector3(newHorizontalVelocity.X, currentVelocity.Y, newHorizontalVelocity.Z);
 	}
 
@@ -65,10 +100,7 @@ public partial class Player : RigidBody3D
 			return;
 		}
 
-		// Calculate target angle from input direction (negated to face movement direction)
 		float targetAngle = Mathf.Atan2(-inputDir.X, -inputDir.Z);
-
-		// Smoothly interpolate current rotation toward target
 		float currentAngle = Rotation.Y;
 		float newAngle = Mathf.LerpAngle(currentAngle, targetAngle, RotationSpeed * delta);
 
