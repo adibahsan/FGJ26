@@ -1,25 +1,40 @@
 using Godot;
-using System;
 
 public partial class GameManager : Node
 {
-	/// <summary>
-	/// Reference to the house scene to spawn. Set this in the editor.
-	/// </summary>
-	[Export] public PackedScene HouseScene { get; set; }
+	public static GameManager Instance { get; private set; }
 
-	/// <summary>
-	/// Reference to the player scene to spawn. Set this in the editor.
-	/// </summary>
+	[Export] public PackedScene HouseScene { get; set; }
 	[Export] public PackedScene PlayerScene { get; set; }
+	[Export] public Control PickupUIElement { get; set; }
 
 	private House _house;
 	private Player _player;
 
 	public override void _Ready()
 	{
+		Instance = this;
+		ShowPickupUI(false);
 		SpawnHouse();
 		SpawnPlayer();
+	}
+
+	public override void _ExitTree()
+	{
+		if (Instance == this)
+		{
+			Instance = null;
+		}
+	}
+
+	public void ShowPickupUI(bool show)
+	{
+		if (PickupUIElement == null)
+		{
+			return;
+		}
+
+		PickupUIElement.Visible = show;
 	}
 
 	private void SpawnHouse()
