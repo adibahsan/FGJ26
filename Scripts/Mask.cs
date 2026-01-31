@@ -1,25 +1,22 @@
 using Godot;
 
-public partial class Mask : Area3D
+public partial class Mask : Node3D
 {
 	[Export] public MaskType Type { get; set; } = MaskType.Sleep;
-
-	/// <summary>
-	/// Node3D that will be reparented to player when picked up.
-	/// </summary>
-	[Export] public Node3D MaskRoot { get; set; }
+	[Export] public Area3D PickupArea { get; set; }
 
 	private Player _playerInZone;
 
 	public override void _Ready()
 	{
-		if (MaskRoot == null)
+		if (PickupArea == null)
 		{
-			GD.PrintErr("Mask: MaskRoot is not assigned! Please assign it in the editor.");
+			GD.PrintErr("Mask: PickupArea is not assigned! Please assign it in the editor.");
+			return;
 		}
 
-		BodyEntered += OnBodyEntered;
-		BodyExited += OnBodyExited;
+		PickupArea.BodyEntered += OnBodyEntered;
+		PickupArea.BodyExited += OnBodyExited;
 	}
 
 	private void OnBodyEntered(Node3D body)
@@ -50,19 +47,18 @@ public partial class Mask : Area3D
 		GameManager.Instance?.ShowPickupUI(false);
 		
 		Node3D carryPosition = player.MaskCarryPosition;
-		if (carryPosition != null && MaskRoot != null)
+		if (carryPosition != null)
 		{
-			MaskRoot.GetParent()?.RemoveChild(MaskRoot);
-			carryPosition.AddChild(MaskRoot);
-			MaskRoot.Position = Vector3.Zero;
-			MaskRoot.Rotation = Vector3.Zero;
-		}
-		else if (MaskRoot == null)
-		{
-			GD.PrintErr("Mask: MaskRoot is not set! Please assign it in the editor.");
+			GetParent()?.RemoveChild(this);
+			carryPosition.AddChild(this);
+			Position = Vector3.Zero;
+			Rotation = Vector3.Zero;
 		}
 		
-		SetDeferred("monitoring", false);
-		SetDeferred("monitorable", false);
+		if (PickupArea != null)
+		{
+			PickupArea.SetDeferred("monitoring", false);
+			PickupArea.SetDeferred("monitorable", false);
+		}
 	}
 }

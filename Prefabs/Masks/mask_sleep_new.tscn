@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ounctmslj4i7"]
+
+[ext_resource type="Script" uid="uid://dw6slyygsj2rd" path="res://Scripts/Mask.cs" id="1_w5lxb"]
+[ext_resource type="ArrayMesh" uid="uid://bqoq5wn2t0dm" path="res://Assets/Masks/TestMask.res" id="2_dsa5t"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_cawpf"]
+
+[node name="MaskSleep" type="Node3D" unique_id=1696122389 node_paths=PackedStringArray("PickupArea")]
+script = ExtResource("1_w5lxb")
+PickupArea = NodePath("Area3D_PickUpTrigger")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=222891828]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = ExtResource("2_dsa5t")
+
+[node name="Area3D_PickUpTrigger" type="Area3D" parent="." unique_id=1358053617]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D_PickUpTrigger" unique_id=1482952190]
+shape = SubResource("SphereShape3D_cawpf")

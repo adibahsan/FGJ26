@@ -5,9 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://dwayruujhu53i" path="res://Prefabs/player.tscn" id="3_u7uub"]
 [ext_resource type="PackedScene" uid="uid://b1aob6gs6un0j" path="res://Scenes/minigame_spammer.tscn" id="4_g3g87"]
 [ext_resource type="PackedScene" uid="uid://ulnwd5m7wivq" path="res://UI/ui_pick_up.tscn" id="4_u7uub"]
-[ext_resource type="PackedScene" path="res://UI/ui_sleep_bar.tscn" id="5_6mi8o"]
-[ext_resource type="PackedScene" path="res://UI/ui_place_mask.tscn" id="6_mql7d"]
-[ext_resource type="PackedScene" path="res://UI/ui_score.tscn" id="7_5x8s8"]
+[ext_resource type="PackedScene" uid="uid://bit4xtq1g0rxw" path="res://UI/ui_sleep_bar.tscn" id="5_6mi8o"]
+[ext_resource type="PackedScene" uid="uid://cdplpx4r222di" path="res://UI/ui_place_mask.tscn" id="6_mql7d"]
+[ext_resource type="PackedScene" uid="uid://dkoylyty766ik" path="res://UI/ui_score.tscn" id="7_5x8s8"]
+[ext_resource type="Script" uid="uid://ba4wxun3ubukf" path="res://Scripts/EventSystem.cs" id="8_g3g87"]
 
 [node name="GameLevel" type="Node3D" unique_id=1811580237 node_paths=PackedStringArray("PickupUIElement", "SetMaskUIElement", "SleepBarUI", "ScoreUI")]
 script = ExtResource("1_jcjmw")
@@ -26,3 +27,6 @@ ScoreUI = NodePath("UiScore")
 [node name="UiPlaceMask" parent="." unique_id=364919443 instance=ExtResource("6_mql7d")]
 
 [node name="UiScore" parent="." unique_id=122718852 instance=ExtResource("7_5x8s8")]
+
+[node name="Node" type="Node" parent="." unique_id=1421593516]
+script = ExtResource("8_g3g87")

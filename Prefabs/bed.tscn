@@ -35,7 +35,6 @@ material_override = SubResource("StandardMaterial3D_o36uu")
 mesh = ExtResource("2_qi3l6")
 
 [node name="MaskPos" type="Node3D" parent="HumanMesh" unique_id=803492774]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.5, -3.9738076e-08, 1.25)
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1187531775 node_paths=PackedStringArray("MaskPosition")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.75, 0)
