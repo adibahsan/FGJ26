@@ -19,6 +19,7 @@ Before starting any work, read the [PLAN.md](./PLAN.md) file to understand the g
 - Never use GDScript for any functionality
 - Follow C# naming conventions (PascalCase for public members, camelCase for private)
 - Use Godot's C# API and patterns
+- **Avoid obvious comments** - Don't add XML summaries or comments that just restate what the code clearly shows. Only comment when explaining non-obvious behavior or important context. Example: `/// <summary>Movement speed of the player.</summary>` on `MoveSpeed` is redundant.
 
 ### File Organization
 
