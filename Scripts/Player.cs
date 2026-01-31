@@ -13,6 +13,7 @@ public partial class Player : RigidBody3D
 	public bool IsCarryingMask => CarriedMask != null;
 
 	private Mask _nearbyMask;
+	private BedArea _nearbyBedArea;
 
 	public void PickupMask(Mask mask)
 	{
@@ -57,12 +58,32 @@ public partial class Player : RigidBody3D
 		}
 	}
 
+	public void SetNearbyBedArea(BedArea bedArea)
+	{
+		_nearbyBedArea = bedArea;
+	}
+
+	public void ClearNearbyBedArea(BedArea bedArea)
+	{
+		if (_nearbyBedArea == bedArea)
+		{
+			_nearbyBedArea = null;
+		}
+	}
+
 	public override void _Process(double delta)
 	{
-		if (Input.IsActionJustPressed("pick_up") && _nearbyMask != null && !IsCarryingMask)
+		if (Input.IsActionJustPressed("interact") && _nearbyMask != null && !IsCarryingMask)
 		{
 			PickupMask(_nearbyMask);
 			_nearbyMask = null;
+		}
+
+		if (Input.IsActionJustPressed("interact") && _nearbyBedArea != null && IsCarryingMask)
+		{
+			Mask mask = CarriedMask;
+			DropMask();
+			_nearbyBedArea.SetMask(mask);
 		}
 	}
 

@@ -7,6 +7,7 @@ public partial class GameManager : Node
 	[Export] public PackedScene HouseScene { get; set; }
 	[Export] public PackedScene PlayerScene { get; set; }
 	[Export] public Control PickupUIElement { get; set; }
+	[Export] public Control SetMaskUIElement { get; set; }
 
 	private House _house;
 	private Player _player;
@@ -15,6 +16,7 @@ public partial class GameManager : Node
 	{
 		Instance = this;
 		ShowPickupUI(false);
+		ShowSetMaskUI(false);
 		SpawnHouse();
 		SpawnPlayer();
 	}
@@ -35,6 +37,16 @@ public partial class GameManager : Node
 		}
 
 		PickupUIElement.Visible = show;
+	}
+
+	public void ShowSetMaskUI(bool show)
+	{
+		if (SetMaskUIElement == null)
+		{
+			return;
+		}
+
+		SetMaskUIElement.Visible = show;
 	}
 
 	private void SpawnHouse()
