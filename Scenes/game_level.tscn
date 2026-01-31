@@ -7,15 +7,23 @@
 [ext_resource type="PackedScene" uid="uid://ulnwd5m7wivq" path="res://UI/ui_pick_up.tscn" id="4_u7uub"]
 [ext_resource type="PackedScene" uid="uid://bit4xtq1g0rxw" path="res://UI/ui_sleep_bar.tscn" id="5_6mi8o"]
 [ext_resource type="PackedScene" uid="uid://dga0cp0ivh4pw" path="res://Scenes/minigame_typer.tscn" id="5_e38tf"]
+[ext_resource type="Resource" uid="uid://c6816pakdnmjg" path="res://Audio/Data/event_sfx_cooling.tres" id="6_bftu2"]
 [ext_resource type="PackedScene" uid="uid://cdplpx4r222di" path="res://UI/ui_place_mask.tscn" id="6_mql7d"]
 [ext_resource type="PackedScene" uid="uid://dkoylyty766ik" path="res://UI/ui_score.tscn" id="7_5x8s8"]
+[ext_resource type="Resource" uid="uid://cpggbb1qg24ac" path="res://Audio/Data/event_sfx_cpap.tres" id="7_t3xx2"]
+[ext_resource type="Resource" uid="uid://c7jfohtb8005s" path="res://Audio/Data/event_sfx_fake_eyes.tres" id="8_4ilpx"]
 [ext_resource type="Script" uid="uid://ba4wxun3ubukf" path="res://Scripts/EventSystem.cs" id="8_g3g87"]
+[ext_resource type="Resource" uid="uid://d3qnlkp8ixgvy" path="res://Audio/Data/event_sfx_gas.tres" id="9_b78im"]
+[ext_resource type="Resource" uid="uid://cm21ttjbqbjv2" path="res://Audio/Data/event_sfx_scary.tres" id="10_uakxb"]
+[ext_resource type="Resource" uid="uid://b7s7vstn2f670" path="res://Audio/Data/event_sfx_sleep.tres" id="11_aphk7"]
 [ext_resource type="AudioStream" uid="uid://drsyoevcloq6v" path="res://Audio/NukkumaskiOST_Gameplay1_SAT_LAI.mp3" id="11_mxr21"]
 [ext_resource type="Script" uid="uid://g25ed8xgy3y2" path="res://Scripts/PlayerAudio.cs" id="11_rn1up"]
 [ext_resource type="AudioStream" uid="uid://cm7vxocqcb6o5" path="res://Audio/NukkumaskiOST_Gameplay2_SAT_LAI.mp3" id="12_11ucq"]
+[ext_resource type="Resource" uid="uid://ln3hikckqqgw" path="res://Audio/Data/event_sfx_snorkel.tres" id="12_qo105"]
+[ext_resource type="Resource" uid="uid://8bgvebv5q7xs" path="res://Audio/Data/event_sfx_welding.tres" id="13_fr8xg"]
 [ext_resource type="AudioStream" uid="uid://dn0jrx8ewtvv0" path="res://Audio/NukkumaskiOST_Gameplay3_SAT_LAI.mp3" id="13_rn1up"]
 
-[node name="GameLevel" type="Node3D" unique_id=1811580237 node_paths=PackedStringArray("PickupUIElement", "SetMaskUIElement", "SleepBarUI", "ScoreUI")]
+[node name="GameLevel" type="Node3D" unique_id=1811580237 node_paths=PackedStringArray("PickupUIElement", "SetMaskUIElement", "SleepBarUI", "ScoreUI", "PlayerAudio")]
 script = ExtResource("1_jcjmw")
 HouseScene = ExtResource("2_ht4rx")
 PlayerScene = ExtResource("3_u7uub")
@@ -24,6 +32,8 @@ PickupUIElement = NodePath("UiPickUp")
 SetMaskUIElement = NodePath("UiPlaceMask")
 SleepBarUI = NodePath("UiSleepBar")
 ScoreUI = NodePath("UiScore")
+PlayerAudio = NodePath("Audio")
+EventAudioDataList = Array[Object]([ExtResource("6_bftu2"), ExtResource("7_t3xx2"), ExtResource("8_4ilpx"), ExtResource("9_b78im"), ExtResource("10_uakxb"), ExtResource("11_aphk7"), ExtResource("12_qo105"), ExtResource("13_fr8xg")])
 SleepDrainRate = 5.0
 NightDurationSeconds = 120.0
 
@@ -38,9 +48,11 @@ NightDurationSeconds = 120.0
 [node name="EventSystem" type="Node" parent="." unique_id=1421593516]
 script = ExtResource("8_g3g87")
 
-[node name="Audio" type="Node" parent="." unique_id=326756595 node_paths=PackedStringArray("MusicPlayers")]
+[node name="Audio" type="Node" parent="." unique_id=326756595 node_paths=PackedStringArray("MusicPlayers", "SFXPlayer", "SFXPlayerLoop")]
 script = ExtResource("11_rn1up")
 MusicPlayers = [NodePath("MusicPlayer1"), NodePath("MusicPlayer2"), NodePath("MusicPlayer3")]
+SFXPlayer = NodePath("SfxPlayer")
+SFXPlayerLoop = NodePath("SfxPlayerLoop")
 
 [node name="MusicPlayer1" type="AudioStreamPlayer" parent="Audio" unique_id=933964001]
 stream = ExtResource("11_mxr21")
@@ -57,3 +69,6 @@ volume_db = -80.0
 autoplay = true
 
 [node name="SfxPlayer" type="AudioStreamPlayer" parent="Audio" unique_id=606637529]
+
+[node name="SfxPlayerLoop" type="AudioStreamPlayer" parent="Audio" unique_id=47050207]
+volume_db = -9.0

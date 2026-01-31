@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EventAudioData" format=3 uid="uid://cpggbb1qg24ac"]
+
+[ext_resource type="Script" uid="uid://bx60ti282k44w" path="res://Scripts/EventAudioData.cs" id="1_ieqo4"]
+[ext_resource type="AudioStream" uid="uid://bfw65pmnv5lpl" path="res://Audio/SFX/Tukehtuminen_1.wav" id="1_sjmpw"]
+
+[resource]
+script = ExtResource("1_ieqo4")
+EventType = 7
+LoopingSound = ExtResource("1_sjmpw")
+metadata/_custom_type_script = "uid://bx60ti282k44w"

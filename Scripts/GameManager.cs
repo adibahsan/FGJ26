@@ -12,6 +12,8 @@ public partial class GameManager : Node
 	[Export] public Control SetMaskUIElement { get; set; }
 	[Export] public UiSleepBar SleepBarUI { get; set; }
 	[Export] public UiScore ScoreUI { get; set; }
+	[Export] public PlayerAudio PlayerAudio { get; set; }
+	[Export] public EventAudioData[] EventAudioDataList { get; set; }
 
 	[Export] public float SleepFillRate { get; set; } = 10f;
 	[Export] public float SleepDrainRate { get; set; } = 15f;
@@ -151,12 +153,41 @@ public partial class GameManager : Node
 	{
 		CurrentEvent = requiredMask;
 		GD.Print($"Event started: requires {requiredMask} mask");
+
+		EventAudioData audioData = GetEventAudioData(requiredMask);
+		if (audioData != null && PlayerAudio != null)
+		{
+			PlayerAudio.PlayEventAudio(audioData);
+		}
+	}
+
+	private EventAudioData GetEventAudioData(MaskType maskType)
+	{
+		if (EventAudioDataList == null)
+		{
+			return null;
+		}
+
+		foreach (EventAudioData data in EventAudioDataList)
+		{
+			if (data != null && data.EventType == maskType)
+			{
+				return data;
+			}
+		}
+
+		return null;
 	}
 
 	public void ClearEvent()
 	{
 		CurrentEvent = MaskType.None;
 		GD.Print("Event cleared");
+
+		if (PlayerAudio != null)
+		{
+			PlayerAudio.StopLoopingAudio();
+		}
 	}
 
 	public bool HasCorrectMask()

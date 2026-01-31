@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EventAudioData" format=3 uid="uid://8bgvebv5q7xs"]
+
+[ext_resource type="AudioStream" uid="uid://sitpvw36wvau" path="res://Audio/SFX/Sahkovika.wav" id="1_ctq76"]
+[ext_resource type="Script" uid="uid://bx60ti282k44w" path="res://Scripts/EventAudioData.cs" id="2_mla6l"]
+
+[resource]
+script = ExtResource("2_mla6l")
+EventType = 8
+LoopingSound = ExtResource("1_ctq76")
+metadata/_custom_type_script = "uid://bx60ti282k44w"
