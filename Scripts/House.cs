@@ -2,8 +2,18 @@ using Godot;
 
 public partial class House : Node3D
 {
-	/// <summary>
-	/// Reference to the player spawn point. Set this in the editor.
-	/// </summary>
 	[Export] public Marker3D Spawnpoint { get; set; }
+	[Export] public Bed Bed { get; set; }
+
+	public override void _Ready()
+	{
+		if (Spawnpoint == null)
+		{
+			GD.PrintErr("House: Spawnpoint is not assigned! Please assign it in the editor.");
+		}
+		if (Bed == null)
+		{
+			GD.PrintErr("House: Bed is not assigned! Please assign it in the editor.");
+		}
+	}
 }

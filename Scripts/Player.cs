@@ -15,6 +15,14 @@ public partial class Player : RigidBody3D
 	private Mask _nearbyMask;
 	private BedArea _nearbyBedArea;
 
+	public override void _Ready()
+	{
+		if (MaskCarryPosition == null)
+		{
+			GD.PrintErr("Player: MaskCarryPosition is not assigned! Please assign it in the editor.");
+		}
+	}
+
 	public void PickupMask(Mask mask)
 	{
 		if (IsCarryingMask)

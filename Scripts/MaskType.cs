@@ -1,6 +1,6 @@
 public enum MaskType
 {
-	// 0 reserved for None if needed
+	None = 0,
 	Cooling = 1,        // Counters heater malfunction
 	Sleep = 2,          // Counters lights going on
 	Scary = 3,          // Scares away vacuum merchant

@@ -8,9 +8,19 @@ public partial class GameManager : Node
 	[Export] public PackedScene PlayerScene { get; set; }
 	[Export] public Control PickupUIElement { get; set; }
 	[Export] public Control SetMaskUIElement { get; set; }
+	[Export] public UiSleepBar SleepBarUI { get; set; }
+	[Export] public UiScore ScoreUI { get; set; }
+
+	[Export] public float SleepFillRate { get; set; } = 10f;
+	[Export] public float SleepDrainRate { get; set; } = 15f;
+	[Export] public float ScorePerSecond { get; set; } = 100f;
+
+	public MaskType CurrentEvent { get; private set; } = MaskType.None;
+	public float Score { get; private set; }
 
 	private House _house;
 	private Player _player;
+	private BedArea _bedArea;
 
 	public override void _Ready()
 	{
@@ -19,6 +29,23 @@ public partial class GameManager : Node
 		ShowSetMaskUI(false);
 		SpawnHouse();
 		SpawnPlayer();
+		DebugReferences();
+	}
+
+	private void DebugReferences()
+	{
+		if (SleepBarUI == null)
+		{
+			GD.PrintErr("GameManager: SleepBarUI is not assigned!");
+		}
+		else if (SleepBarUI.Slider == null)
+		{
+			GD.PrintErr("GameManager: SleepBarUI.Slider is not assigned!");
+		}
+		else
+		{
+			GD.Print($"GameManager: SleepBarUI OK - Value: {SleepBarUI.GetValue()}");
+		}
 	}
 
 	public override void _ExitTree()
@@ -59,6 +86,7 @@ public partial class GameManager : Node
 
 		_house = HouseScene.Instantiate<House>();
 		AddChild(_house);
+		_bedArea = _house.Bed?.Area;
 	}
 
 	private void SpawnPlayer()
@@ -88,5 +116,61 @@ public partial class GameManager : Node
 
 	public override void _Process(double delta)
 	{
+		UpdateSleep((float)delta);
+		UpdateScore((float)delta);
+	}
+
+	public void SetEvent(MaskType requiredMask)
+	{
+		CurrentEvent = requiredMask;
+		GD.Print($"Event started: requires {requiredMask} mask");
+	}
+
+	public void ClearEvent()
+	{
+		CurrentEvent = MaskType.None;
+		GD.Print("Event cleared");
+	}
+
+	public bool HasCorrectMask()
+	{
+		if (_bedArea == null)
+		{
+			return false;
+		}
+
+		return _bedArea.CurrentMask == CurrentEvent;
+	}
+
+	private void UpdateSleep(float delta)
+	{
+		if (SleepBarUI == null)
+		{
+			return;
+		}
+
+		bool shouldFill = CurrentEvent == MaskType.None || HasCorrectMask();
+
+		if (shouldFill)
+		{
+			SleepBarUI.IncreaseValue(SleepFillRate * delta);
+		}
+		else
+		{
+			SleepBarUI.DecreaseValue(SleepDrainRate * delta);
+		}
+	}
+
+	private void UpdateScore(float delta)
+	{
+		if (SleepBarUI == null)
+		{
+			return;
+		}
+
+		float sleepPercent = SleepBarUI.GetNormalizedValue();
+		Score += ScorePerSecond * sleepPercent * delta;
+
+		ScoreUI?.UpdateScore(Score);
 	}
 }

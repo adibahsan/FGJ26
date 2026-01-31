@@ -13,6 +13,11 @@ public partial class Mask : Area3D
 
 	public override void _Ready()
 	{
+		if (MaskRoot == null)
+		{
+			GD.PrintErr("Mask: MaskRoot is not assigned! Please assign it in the editor.");
+		}
+
 		BodyEntered += OnBodyEntered;
 		BodyExited += OnBodyExited;
 	}

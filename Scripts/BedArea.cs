@@ -4,10 +4,17 @@ public partial class BedArea : Area3D
 {
 	[Export] public Node3D MaskPosition { get; set; }
 
+	public MaskType CurrentMask { get; private set; } = MaskType.None;
+
 	private Player _playerInZone;
 
 	public override void _Ready()
 	{
+		if (MaskPosition == null)
+		{
+			GD.PrintErr("BedArea: MaskPosition is not assigned! Please assign it in the editor.");
+		}
+
 		BodyEntered += OnBodyEntered;
 		BodyExited += OnBodyExited;
 	}
@@ -64,7 +71,13 @@ public partial class BedArea : Area3D
 		maskRoot.Position = Vector3.Zero;
 		maskRoot.Rotation = Vector3.Zero;
 
+		CurrentMask = mask.Type;
 		GameManager.Instance?.ShowSetMaskUI(false);
 		GD.Print($"Set {mask.Type} mask on bed");
+	}
+
+	public void ClearMask()
+	{
+		CurrentMask = MaskType.None;
 	}
 }
