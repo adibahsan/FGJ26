@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://dagg238ac6tdf"]
 
 [ext_resource type="Script" uid="uid://dw6slyygsj2rd" path="res://Scripts/Mask.cs" id="1_cjeam"]
-[ext_resource type="ArrayMesh" uid="uid://bqoq5wn2t0dm" path="res://Assets/Masks/TestMask.res" id="2_aiev0"]
+[ext_resource type="Material" uid="uid://dt3fgufhyoimt" path="res://Assets/Materials/Mask_WeldingEyeGelMaterial.tres" id="2_aiev0"]
+[ext_resource type="ArrayMesh" uid="uid://buitag0a16fqe" path="res://Assets/Masks/Gel.res" id="2_cjeam"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_cawpf"]
 radius = 0.6
@@ -12,8 +13,9 @@ Type = 1
 PickupArea = NodePath("Area3D_PickUpTrigger")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=222891828]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-mesh = ExtResource("2_aiev0")
+transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 0, 0, 0)
+material_override = ExtResource("2_aiev0")
+mesh = ExtResource("2_cjeam")
 
 [node name="Area3D_PickUpTrigger" type="Area3D" parent="." unique_id=1358053617]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.4)

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c7lkkflrhxwwf"
-path="res://.godot/imported/Mask_Sleeping.fbx-5e3527aeeeedb36321561938b6f92144.scn"
+uid="uid://bytm1nkkasfp"
+path="res://.godot/imported/Mask_Gel.fbx-9891528f2db1f0091a6594d3d69a85c2.scn"
 
 [deps]
 
-source_file="res://Assets/Masks/Mask_Sleeping.fbx"
-dest_files=["res://.godot/imported/Mask_Sleeping.fbx-5e3527aeeeedb36321561938b6f92144.scn"]
+source_file="res://Assets/Masks/Mask_Gel.fbx"
+dest_files=["res://.godot/imported/Mask_Gel.fbx-9891528f2db1f0091a6594d3d69a85c2.scn"]
 
 [params]
 
@@ -39,14 +39,14 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "meshes": {
-"Cube_016": {
+"Mesh": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://Assets/Masks/Sleeping.res",
-"save_to_file/path": "uid://cfgo1h0dv8p3i"
+"save_to_file/fallback_path": "res://Assets/Masks/Gel.res",
+"save_to_file/path": "uid://buitag0a16fqe"
 }
 }
 }

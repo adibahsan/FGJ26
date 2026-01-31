@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dt3fgufhyoimt"]
+
+[ext_resource type="Texture2D" uid="uid://bjlrta0iq0vk1" path="res://Assets/Textures/Masks_WeldingEyeGel_BaseColor.png" id="1_ryv5a"]
+
+[resource]
+albedo_texture = ExtResource("1_ryv5a")
