@@ -14,8 +14,8 @@ grow_vertical = 2
 scale = Vector2(0.95, 0.95)
 script = ExtResource("1_q7x6x")
 RotatingControl = NodePath("HBoxContainer/VBoxContainer/TextureRect/Control")
-StartAngle = -75.0
-EndAngle = 75.0
+StartAngle = -71.0
+EndAngle = 78.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1276100759]
 layout_mode = 1
@@ -31,7 +31,7 @@ layout_mode = 2
 alignment = 2
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer" unique_id=1060953518]
-custom_minimum_size = Vector2(512, 256)
+custom_minimum_size = Vector2(400, 200)
 layout_mode = 2
 texture = ExtResource("1_223v3")
 expand_mode = 2
@@ -39,20 +39,20 @@ stretch_mode = 4
 
 [node name="Control" type="Control" parent="HBoxContainer/VBoxContainer/TextureRect" unique_id=1257220948]
 anchors_preset = 0
-offset_right = 512.0
-offset_bottom = 256.0
-rotation = -1.3089969
+offset_right = 400.0
+offset_bottom = 200.0
+rotation = -1.2391838
 pivot_offset_ratio = Vector2(0.5, 1)
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/TextureRect/Control" unique_id=187023877]
-custom_minimum_size = Vector2(128, 128)
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -64.0
-offset_right = 64.0
-offset_bottom = 128.0
+offset_right = 36.0
+offset_bottom = 100.0
 grow_horizontal = 2
 texture = ExtResource("2_q7x6x")
 expand_mode = 1
