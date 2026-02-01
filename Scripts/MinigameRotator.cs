@@ -132,7 +132,7 @@ public partial class MinigameRotator : MinigameBase
 		}
 		else
 		{
-			OnFail();
+			//OnFail();
 		}
 	}
 
@@ -181,7 +181,7 @@ public partial class MinigameRotator : MinigameBase
 
 		if (pressedCount > 1)
 		{
-			OnFail();
+			//OnFail();
 			return false;
 		}
 
