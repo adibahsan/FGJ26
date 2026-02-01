@@ -118,7 +118,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6140654, 0, 1.6289935)
 transform = Transform3D(1, 0, 0, 0, 0.58339953, 0.8121854, 0, -0.8121854, 0.58339953, -2.4129684, 8.517458, 4.325134)
 
 [node name="DirectionalLight3D" parent="." unique_id=54087904 instance=ExtResource("3_gjult")]
-transform = Transform3D(1, 0, 0, 0, 0.4203708, 0.9073524, 0, -0.9073524, 0.4203708, 0, 10, 0)
+transform = Transform3D(1, 0, 0, 0, 0.4203708, 0.9073524, 0, -0.9073524, 0.4203708, -6.2052574, 10, 0)
+
+[node name="DirectionalLight3D2" parent="." unique_id=84412928 instance=ExtResource("3_gjult")]
+transform = Transform3D(1, 0, 0, 0, 0.4203708, 0.9073524, 0, -0.9073524, 0.4203708, 2, 10, 0)
 
 [node name="Bed" parent="." unique_id=898245071 instance=ExtResource("5_gjult")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 4.1360435, 0, -4.941268)
