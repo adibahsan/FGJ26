@@ -216,6 +216,18 @@ public partial class GameManager : Node
 			audio?.StopLoopingAudio();
 			GD.Print($"Correct mask applied ({maskType}), stopped looping audio");
 		}
+		if (maskType == CurrentEvent && CurrentEvent == MaskType.Scary)
+		{
+			var audio = global::PlayerAudio.Instance;
+			audio?.StopLoopingAudio();
+			GD.Print($"Correct mask applied ({maskType}), stopped looping audio");
+		}
+		if (maskType == CurrentEvent && CurrentEvent == MaskType.FakeEyeGlasses)
+		{
+			var audio = global::PlayerAudio.Instance;
+			audio?.StopLoopingAudio();
+			GD.Print($"Correct mask applied ({maskType}), stopped looping audio");
+		}
 	}
 
 	public void StartNextMinigame()
