@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b2e0gp6cxqjop"]
+
+[ext_resource type="Texture2D" uid="uid://ccx2mpejkfeyk" path="res://Assets/Textures/Salesman_Base_color.png" id="1_bff8y"]
+
+[resource]
+albedo_texture = ExtResource("1_bff8y")
