@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b82mmslr2sksc"]
+
+[ext_resource type="Texture2D" uid="uid://dqflufvmxqhfn" path="res://Assets/Textures/MattoJaKasvi_BaseColor.png" id="1_1g5v1"]
+
+[resource]
+albedo_texture = ExtResource("1_1g5v1")

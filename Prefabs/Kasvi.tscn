@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://5lc0lieqy4t5"]
+
+[ext_resource type="Material" uid="uid://b82mmslr2sksc" path="res://Assets/Materials/MattoJaKasvi.tres" id="1_87r0o"]
+[ext_resource type="Texture2D" uid="uid://ccrhfu57hpy5o" path="res://Assets/Textures/VessaTavara.png" id="2_87r0o"]
+[ext_resource type="ArrayMesh" uid="uid://chcbo2qkm6k5c" path="res://Assets/Environment/Kasvi_001.res" id="2_i1ce1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n4x5a"]
+albedo_color = Color(0.57700837, 0.5770084, 0.57700837, 1)
+albedo_texture = ExtResource("2_87r0o")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_todqe"]
+size = Vector3(0.45007753, 0.8411865, 0.45400715)
+
+[node name="Kasvi" type="StaticBody3D" unique_id=1920436334]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1677661318]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+material_override = ExtResource("1_87r0o")
+mesh = ExtResource("2_i1ce1")
+surface_material_override/0 = SubResource("StandardMaterial3D_n4x5a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=360841779]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0022938251, 0.42156982, -0.019058704)
+shape = SubResource("BoxShape3D_todqe")
