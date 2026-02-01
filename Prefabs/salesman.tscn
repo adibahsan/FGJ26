@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://df2xhoxibkudv"]
+
+[ext_resource type="Material" path="res://Assets/Materials/SalesmanMaterial.tres" id="1_v17h0"]
+[ext_resource type="ArrayMesh" uid="uid://bjlsv3w7sncol" path="res://Assets/Characters/Salesman.res" id="2_1c2o7"]
+
+[node name="Salesman" type="Node3D" unique_id=891035573]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=543560265]
+transform = Transform3D(-1, -8.742278e-08, 0, -3.821371e-15, 4.371139e-08, 1, -8.742278e-08, 1, -4.371139e-08, 0, 0, 0)
+material_override = ExtResource("1_v17h0")
+mesh = ExtResource("2_1c2o7")
