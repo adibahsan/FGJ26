@@ -227,8 +227,8 @@ public partial class GameManager : Node
 		if (maskType == CurrentEvent && CurrentEvent == MaskType.FakeEyeGlasses)
 		{
 			var audio = global::PlayerAudio.Instance;
-			audio?.StopLoopingAudio();
-			GD.Print($"Correct mask applied ({maskType}), stopped looping audio");
+			audio?.PlaySecondaryLoopingAudio();
+			GD.Print($"Correct mask applied ({maskType}), Played secondary looping audio");
 		}
 	}
 

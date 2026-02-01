@@ -16,6 +16,8 @@ public partial class PlayerAudio : Node
 	private int _activePlayerIndex;
 	private UiSleepBar _sleepBar;
 
+	private EventAudioData currentEventData;
+
 	public override void _Ready()
 	{
 		if (Instance != null && Instance != this)
@@ -119,6 +121,8 @@ public partial class PlayerAudio : Node
 		{
 			return;
 		}
+		
+		currentEventData = eventData;
 
 		if (eventData.OneShotSound != null && SFXPlayer != null)
 		{
@@ -133,6 +137,19 @@ public partial class PlayerAudio : Node
 		}
 	}
 
+	public void PlaySecondaryLoopingAudio()
+	{
+		if (currentEventData.LoopingSound != null && SFXPlayerLoop != null)
+		{
+			SFXPlayerLoop.Stream = currentEventData.SecondaryLoopingSound;
+			SFXPlayerLoop.Play();
+		}
+		else
+		{
+			StopLoopingAudio();
+		}
+	}
+	
 	public void StopLoopingAudio()
 	{
 		if (SFXPlayerLoop != null)
