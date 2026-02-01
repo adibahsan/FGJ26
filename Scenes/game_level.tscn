@@ -25,13 +25,14 @@
 [ext_resource type="FontFile" uid="uid://cpwhbheucfmak" path="res://Assets/Fonts/ComicNeue-Bold.ttf" id="22_b78im"]
 [ext_resource type="Texture2D" uid="uid://d086nxg163dne" path="res://Assets/UI/UI_MinigameBG_01.png" id="23_uakxb"]
 [ext_resource type="Texture2D" uid="uid://dngdx6qeic76e" path="res://Assets/UI/UI_ButtonBG_01.png" id="24_aphk7"]
+[ext_resource type="PackedScene" uid="uid://t0sv4578xbh4" path="res://UI/ui_get_mask.tscn" id="26_uakxb"]
 
 [sub_resource type="Theme" id="Theme_853f1"]
 default_font_size = 74
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_df05h"]
 
-[node name="GameLevel" type="Node3D" unique_id=1811580237 node_paths=PackedStringArray("PickupUIElement", "SetMaskUIElement", "SleepBarUI", "ScoreUI")]
+[node name="GameLevel" type="Node3D" unique_id=1811580237 node_paths=PackedStringArray("PickupUIElement", "SetMaskUIElement", "EventGuideUIElement", "SleepBarUI", "ScoreUI")]
 script = ExtResource("1_jcjmw")
 HouseScene = ExtResource("2_ht4rx")
 PlayerScene = ExtResource("3_u7uub")
@@ -39,6 +40,7 @@ MinigameScenes = Array[PackedScene]([ExtResource("6_t3xx2"), ExtResource("5_e38t
 GameOverScene = ExtResource("6_4ilpx")
 PickupUIElement = NodePath("UiPickUp")
 SetMaskUIElement = NodePath("UiPlaceMask")
+EventGuideUIElement = NodePath("UiGetMask")
 SleepBarUI = NodePath("UiSleepBarV2")
 ScoreUI = NodePath("UiScore")
 EventAudioDataList = Array[Object]([ExtResource("6_bftu2"), ExtResource("7_t3xx2"), ExtResource("8_4ilpx"), ExtResource("9_b78im"), ExtResource("10_uakxb"), ExtResource("11_aphk7"), ExtResource("12_qo105"), ExtResource("13_fr8xg")])
@@ -48,6 +50,8 @@ NightDurationSeconds = 120.0
 [node name="UiPickUp" parent="." unique_id=1815324665 instance=ExtResource("4_u7uub")]
 
 [node name="UiPlaceMask" parent="." unique_id=364919443 instance=ExtResource("6_mql7d")]
+
+[node name="UiGetMask" parent="." unique_id=1920661861 instance=ExtResource("26_uakxb")]
 
 [node name="UiScore" parent="." unique_id=122718852 instance=ExtResource("7_5x8s8")]
 

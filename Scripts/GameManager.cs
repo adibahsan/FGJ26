@@ -13,6 +13,7 @@ public partial class GameManager : Node
 	[Export] public PackedScene GameOverScene { get; set; }
 	[Export] public Control PickupUIElement { get; set; }
 	[Export] public Control SetMaskUIElement { get; set; }
+	[Export] public Control EventGuideUIElement { get; set; }
 	[Export] public UiSleepBar SleepBarUI { get; set; }
 	[Export] public UiScore ScoreUI { get; set; }
 	[Export] public EventAudioData[] EventAudioDataList { get; set; }
@@ -36,12 +37,14 @@ public partial class GameManager : Node
 	private int _minigameIndex;
 	private bool _gameEnded;
 
+	private bool _wantsPickupUI;
+	private bool _wantsSetMaskUI;
+
 	public override void _Ready()
 	{
 		Instance = this;
 		ValidateExports();
-		ShowPickupUI(false);
-		ShowSetMaskUI(false);
+		HideAllPromptUI();
 		SpawnHouse();
 		SpawnPlayer();
 		ShuffleMinigames();
@@ -79,6 +82,11 @@ public partial class GameManager : Node
 			GD.PrintErr("GameManager: SetMaskUIElement is not assigned!");
 		}
 
+		if (EventGuideUIElement == null)
+		{
+			GD.PrintErr("GameManager: EventGuideUIElement is not assigned!");
+		}
+
 		if (SleepBarUI == null)
 		{
 			GD.PrintErr("GameManager: SleepBarUI is not assigned!");
@@ -108,12 +116,61 @@ public partial class GameManager : Node
 	public void ShowPickupUI(bool show, MaskType maskType = MaskType.None)
 	{
 		CurrentPickupMask = show ? maskType : MaskType.None;
-		PickupUIElement.Visible = show;
+		_wantsPickupUI = show;
+		UpdatePromptUI();
 	}
 
 	public void ShowSetMaskUI(bool show)
 	{
-		SetMaskUIElement.Visible = show;
+		_wantsSetMaskUI = show;
+		UpdatePromptUI();
+	}
+
+	private void HideAllPromptUI()
+	{
+		if (PickupUIElement != null) PickupUIElement.Visible = false;
+		if (SetMaskUIElement != null) SetMaskUIElement.Visible = false;
+		if (EventGuideUIElement != null) EventGuideUIElement.Visible = false;
+	}
+
+	private void UpdatePromptUI()
+	{
+		HideAllPromptUI();
+
+		// Priority: SetMaskUI > PickupUI > EventGuideUI
+		if (_wantsSetMaskUI)
+		{
+			if (SetMaskUIElement != null) SetMaskUIElement.Visible = true;
+		}
+		else if (_wantsPickupUI)
+		{
+			if (PickupUIElement != null) PickupUIElement.Visible = true;
+		}
+		else if (ShouldShowEventGuide())
+		{
+			if (EventGuideUIElement != null) EventGuideUIElement.Visible = true;
+		}
+	}
+
+	private bool ShouldShowEventGuide()
+	{
+		// Show guide when: event is active, player not carrying mask, sleeper doesn't have correct mask
+		if (CurrentEvent == MaskType.None)
+		{
+			return false;
+		}
+
+		if (_player != null && _player.IsCarryingMask)
+		{
+			return false;
+		}
+
+		if (HasCorrectMask())
+		{
+			return false;
+		}
+
+		return true;
 	}
 
 	private void SpawnHouse()
@@ -140,6 +197,7 @@ public partial class GameManager : Node
 		UpdateNightProgress((float)delta);
 		UpdateSleep((float)delta);
 		UpdateScore((float)delta);
+		UpdatePromptUI();
 	}
 
 	private void UpdateNightProgress(float delta)
