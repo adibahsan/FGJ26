@@ -12,19 +12,21 @@ MusicPlayers = [NodePath("MusicPlayer1"), NodePath("MusicPlayer2"), NodePath("Mu
 SFXPlayer = NodePath("SfxPlayer")
 SFXPlayerLoop = NodePath("SfxPlayerLoop")
 SfxPlayerWalkingLoop = NodePath("SfxPlayerWalkingLoop")
+MaxVolumeDb = -12.0
 
 [node name="MusicPlayer1" type="AudioStreamPlayer" parent="." unique_id=503566614]
 stream = ExtResource("2_qa75a")
+volume_db = -12.0
 autoplay = true
 
 [node name="MusicPlayer2" type="AudioStreamPlayer" parent="." unique_id=667040335]
 stream = ExtResource("3_0i8pl")
-volume_db = -80.0
+volume_db = -12.0
 autoplay = true
 
 [node name="MusicPlayer3" type="AudioStreamPlayer" parent="." unique_id=1267458250]
 stream = ExtResource("4_6mmrv")
-volume_db = -80.0
+volume_db = -12.0
 autoplay = true
 
 [node name="SfxPlayer" type="AudioStreamPlayer" parent="." unique_id=426392274]

@@ -44,7 +44,7 @@ EventGuideUIElement = NodePath("UiGetMask")
 SleepBarUI = NodePath("UiSleepBarV2")
 ScoreUI = NodePath("UiScore")
 EventAudioDataList = Array[Object]([ExtResource("6_bftu2"), ExtResource("7_t3xx2"), ExtResource("8_4ilpx"), ExtResource("9_b78im"), ExtResource("10_uakxb"), ExtResource("11_aphk7"), ExtResource("12_qo105"), ExtResource("13_fr8xg")])
-SleepDrainRate = 5.0
+SleepDrainRate = 4.0
 NightDurationSeconds = 120.0
 
 [node name="UiPickUp" parent="." unique_id=1815324665 instance=ExtResource("4_u7uub")]
