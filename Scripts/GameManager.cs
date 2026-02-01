@@ -25,6 +25,7 @@ public partial class GameManager : Node
 	[Export] public float NightProgress { get; set; } = 0f;
 
 	[Export] public MaskType CurrentEvent { get; private set; } = MaskType.None;
+	public MaskType CurrentPickupMask { get; private set; } = MaskType.None;
 	public float Score { get; private set; }
 
 	private House _house;
@@ -104,8 +105,9 @@ public partial class GameManager : Node
 		}
 	}
 
-	public void ShowPickupUI(bool show)
+	public void ShowPickupUI(bool show, MaskType maskType = MaskType.None)
 	{
+		CurrentPickupMask = show ? maskType : MaskType.None;
 		PickupUIElement.Visible = show;
 	}
 
