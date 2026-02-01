@@ -12,7 +12,6 @@ public partial class MinigameRotator : MinigameBase
 	[Export] public float RotationDurationSeconds { get; set; } = 0.12f;
 	[Export] public Tween.TransitionType RotationTransition { get; set; } = Tween.TransitionType.Sine;
 	[Export] public Tween.EaseType RotationEase { get; set; } = Tween.EaseType.Out;
-	[Export] public bool AutoCenterPivot { get; set; } = true;
 
 	// Defaults are mapped to both WASD + arrows in this project via Input Map.
 	[Export] public string UpAction { get; set; } = "move_forward";
@@ -45,11 +44,6 @@ public partial class MinigameRotator : MinigameBase
 		if (RotatingVisual == null)
 		{
 			GD.PrintErr("MinigameRotator: RotatingVisual is not assigned!");
-		}
-
-		if (AutoCenterPivot && RotatingVisual != null)
-		{
-			CallDeferred(nameof(SetupPivot));
 		}
 	}
 
@@ -158,20 +152,21 @@ public partial class MinigameRotator : MinigameBase
 		}
 
 		// Use rotation steps so it always rotates forward (never backwards from 270° to 0°)
-		float targetRotation = _rotationSteps * (Mathf.Pi / 2.0f);
+		// 90 degrees per step
+		float targetRotationDegrees = _rotationSteps * 90.0f;
 
 		if (instant)
 		{
 			_rotateTween?.Kill();
-			RotatingVisual.Rotation = targetRotation;
+			RotatingVisual.RotationDegrees = targetRotationDegrees;
 		}
 		else
 		{
-			AnimateRotationTo(targetRotation);
+			AnimateRotationTo(targetRotationDegrees);
 		}
 	}
 
-	private void AnimateRotationTo(float targetRotationRadians)
+	private void AnimateRotationTo(float targetRotationDegrees)
 	{
 		if (RotatingVisual == null)
 		{
@@ -182,16 +177,6 @@ public partial class MinigameRotator : MinigameBase
 		_rotateTween = CreateTween();
 		_rotateTween.SetTrans(RotationTransition);
 		_rotateTween.SetEase(RotationEase);
-		_rotateTween.TweenProperty(RotatingVisual, "rotation", targetRotationRadians, RotationDurationSeconds);
-	}
-
-	private void SetupPivot()
-	{
-		if (RotatingVisual == null)
-		{
-			return;
-		}
-
-		RotatingVisual.PivotOffset = RotatingVisual.Size / 2.0f;
+		_rotateTween.TweenProperty(RotatingVisual, "rotation_degrees", targetRotationDegrees, RotationDurationSeconds);
 	}
 }

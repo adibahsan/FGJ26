@@ -24,7 +24,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yj4r4")
 FillBar = NodePath("HBoxContainer/VBoxContainer/ProgressBar")
-RotatingVisual = NodePath("HBoxContainer/VBoxContainer/ProgressBar/Control/Pointer")
+RotatingVisual = NodePath("HBoxContainer/VBoxContainer/TextureRect/Pointer")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1391481684]
 layout_mode = 1
@@ -39,8 +39,26 @@ alignment = 1
 layout_mode = 2
 alignment = 1
 
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer" unique_id=105531960]
+custom_minimum_size = Vector2(360, 360)
+layout_mode = 2
+texture = ExtResource("6_0k4rk")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Pointer" type="TextureRect" parent="HBoxContainer/VBoxContainer/TextureRect" unique_id=97898269]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("7_klp4l")
+expand_mode = 1
+
 [node name="Control" type="Control" parent="HBoxContainer/VBoxContainer" unique_id=513767399]
-custom_minimum_size = Vector2(0, 120)
+custom_minimum_size = Vector2(0, 75)
 layout_mode = 2
 
 [node name="ProgressBar" type="ProgressBar" parent="HBoxContainer/VBoxContainer" unique_id=1723163164]
@@ -67,24 +85,6 @@ offset_bottom = -230.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.8, 0.8)
-
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/ProgressBar/Control" unique_id=105531960]
-layout_mode = 0
-offset_left = -200.0
-offset_top = -260.0
-offset_right = 200.0
-offset_bottom = 140.0
-texture = ExtResource("6_0k4rk")
-expand_mode = 1
-
-[node name="Pointer" type="TextureRect" parent="HBoxContainer/VBoxContainer/ProgressBar/Control" unique_id=97898269]
-layout_mode = 0
-offset_left = -200.0
-offset_top = -260.0
-offset_right = 200.0
-offset_bottom = 140.0
-texture = ExtResource("7_klp4l")
-expand_mode = 1
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/ProgressBar" unique_id=645318742]
 layout_mode = 1
