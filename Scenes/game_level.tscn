@@ -19,8 +19,9 @@
 [ext_resource type="Resource" uid="uid://b7s7vstn2f670" path="res://Audio/Data/event_sfx_sleep.tres" id="11_aphk7"]
 [ext_resource type="Resource" uid="uid://ln3hikckqqgw" path="res://Audio/Data/event_sfx_snorkel.tres" id="12_qo105"]
 [ext_resource type="Resource" uid="uid://8bgvebv5q7xs" path="res://Audio/Data/event_sfx_welding.tres" id="13_fr8xg"]
+[ext_resource type="PackedScene" uid="uid://bjs0nbjqcojdo" path="res://UI/ui_timer.tscn" id="20_faur3"]
 
-[node name="GameLevel" type="Node3D" unique_id=1811580237 node_paths=PackedStringArray("PickupUIElement", "SetMaskUIElement", "SleepBarUI", "ScoreUI", "PlayerAudio")]
+[node name="GameLevel" type="Node3D" unique_id=1811580237 node_paths=PackedStringArray("PickupUIElement", "SetMaskUIElement", "SleepBarUI", "ScoreUI")]
 script = ExtResource("1_jcjmw")
 HouseScene = ExtResource("2_ht4rx")
 PlayerScene = ExtResource("3_u7uub")
@@ -30,7 +31,6 @@ PickupUIElement = NodePath("UiPickUp")
 SetMaskUIElement = NodePath("UiPlaceMask")
 SleepBarUI = NodePath("UiSleepBar")
 ScoreUI = NodePath("UiScore")
-PlayerAudio = NodePath("")
 EventAudioDataList = Array[Object]([ExtResource("6_bftu2"), ExtResource("7_t3xx2"), ExtResource("8_4ilpx"), ExtResource("9_b78im"), ExtResource("10_uakxb"), ExtResource("11_aphk7"), ExtResource("12_qo105"), ExtResource("13_fr8xg")])
 SleepDrainRate = 5.0
 NightDurationSeconds = 120.0
@@ -45,3 +45,5 @@ NightDurationSeconds = 120.0
 
 [node name="EventSystem" type="Node" parent="." unique_id=1421593516]
 script = ExtResource("8_g3g87")
+
+[node name="UiTimer" parent="." unique_id=445083505 instance=ExtResource("20_faur3")]
