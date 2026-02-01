@@ -26,10 +26,10 @@ UiObject = NodePath("UIBarOverlayParent/ProgressBar")
 
 [node name="UIBarOverlayParent" type="Control" parent="." unique_id=1927616660]
 layout_mode = 1
-anchor_left = 0.754
-anchor_top = 0.013
-anchor_right = 0.99200004
-anchor_bottom = 0.16100001
+anchor_left = 0.009
+anchor_top = 0.854
+anchor_right = 0.352
+anchor_bottom = 0.985
 
 [node name="ProgressBar" type="ProgressBar" parent="UIBarOverlayParent" unique_id=392928146]
 layout_mode = 1
