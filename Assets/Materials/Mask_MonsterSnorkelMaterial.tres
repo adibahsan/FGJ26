@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dinkaqm0njoiw"]
+
+[ext_resource type="Texture2D" uid="uid://d1uliljod2um5" path="res://Assets/Textures/Masks_MonsterSnorkel_BaseColor.png" id="1_52ndh"]
+
+[resource]
+albedo_texture = ExtResource("1_52ndh")

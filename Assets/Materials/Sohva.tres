@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c63ngatexkr7f"]
+
+[ext_resource type="Texture2D" uid="uid://pgx1hgamtjpa" path="res://Assets/Textures/Sohva_BaseColor.png" id="1_bgo1k"]
+
+[resource]
+albedo_texture = ExtResource("1_bgo1k")

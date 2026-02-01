@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://inl4ib8j8g6h"]
+
+[ext_resource type="Material" uid="uid://c63ngatexkr7f" path="res://Assets/Materials/Sohva.tres" id="1_yhwxw"]
+[ext_resource type="ArrayMesh" uid="uid://dm7mp2rwtt5da" path="res://Assets/Environment/Sohva_001.res" id="2_evy6w"]
+[ext_resource type="Texture2D" uid="uid://ccrhfu57hpy5o" path="res://Assets/Textures/VessaTavara.png" id="3_6egto"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n4x5a"]
+albedo_color = Color(0.57700837, 0.5770084, 0.57700837, 1)
+albedo_texture = ExtResource("3_6egto")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_todqe"]
+size = Vector3(2.5723705, 1.2843628, 1.1654599)
+
+[node name="Sohva" type="StaticBody3D" unique_id=1920436334]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1677661318]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+material_override = ExtResource("1_yhwxw")
+mesh = ExtResource("2_evy6w")
+surface_material_override/0 = SubResource("StandardMaterial3D_n4x5a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=360841779]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0042285323, 0.64315796, -0.040486455)
+shape = SubResource("BoxShape3D_todqe")
