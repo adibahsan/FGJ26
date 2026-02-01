@@ -56,7 +56,6 @@ NightDurationSeconds = 120.0
 [node name="EventSystem" type="Node" parent="." unique_id=1421593516]
 script = ExtResource("8_g3g87")
 MaxEventDuration = 20.0
-DebugFirstEvent = 3
 
 [node name="UiTimer" parent="." unique_id=445083505 instance=ExtResource("20_faur3")]
 

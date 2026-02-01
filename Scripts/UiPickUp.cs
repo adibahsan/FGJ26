@@ -36,7 +36,7 @@ public partial class UiPickUp : Control
 			MaskType.Gas => "Gas Mask",
 			MaskType.Cpap => "CPAP Mask",
 			MaskType.Welding => "Welding Mask",
-			_ => "Unknown Mask"
+			_ => "Mask"
 		};
 	}
 }
