@@ -5,9 +5,9 @@
 [ext_resource type="FontFile" uid="uid://cpwhbheucfmak" path="res://Assets/Fonts/ComicNeue-Bold.ttf" id="3_0k4rk"]
 [ext_resource type="Texture2D" uid="uid://cc0laowdqup7d" path="res://Assets/Textures/BarTexture01.png" id="4_klp4l"]
 [ext_resource type="Texture2D" uid="uid://dkrihvyhplsma" path="res://Assets/Textures/BarTexture02.png" id="5_oiqeh"]
+[ext_resource type="Texture2D" uid="uid://dn81qs88gnb57" path="res://Assets/UI/UI_Clock_01.png" id="6_0k4rk"]
 [ext_resource type="Texture2D" uid="uid://bfilfj0h1wydb" path="res://Assets/UI/UI_Minigamebar_01.png" id="6_b4ajl"]
-[ext_resource type="Texture2D" uid="uid://c0oc8454k01yb" path="res://Assets/Textures/RotateBase.png" id="6_wq8kk"]
-[ext_resource type="Texture2D" uid="uid://duowjk0fq3oq5" path="res://Assets/Textures/Pointer.png" id="7_0k4rk"]
+[ext_resource type="Texture2D" uid="uid://dbuna6fvbpank" path="res://Assets/UI/UI_Arrow_01.png" id="7_klp4l"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ssqhy"]
 texture = ExtResource("4_klp4l")
@@ -39,6 +39,10 @@ alignment = 1
 layout_mode = 2
 alignment = 1
 
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer" unique_id=513767399]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+
 [node name="ProgressBar" type="ProgressBar" parent="HBoxContainer/VBoxContainer" unique_id=1723163164]
 custom_minimum_size = Vector2(360, 60)
 layout_mode = 2
@@ -53,40 +57,42 @@ value = 0.5
 
 [node name="Control" type="Control" parent="HBoxContainer/VBoxContainer/ProgressBar" unique_id=182772493]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 181.0
-offset_top = -128.0
-offset_right = -129.0
-offset_bottom = -138.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -230.0
+offset_bottom = -230.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.8, 0.8)
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/ProgressBar/Control" unique_id=105531960]
 layout_mode = 0
-offset_left = -260.0
-offset_top = -246.0
-offset_right = 240.0
-offset_bottom = 108.0
-texture = ExtResource("6_wq8kk")
+offset_left = -200.0
+offset_top = -260.0
+offset_right = 200.0
+offset_bottom = 140.0
+texture = ExtResource("6_0k4rk")
+expand_mode = 1
 
 [node name="Pointer" type="TextureRect" parent="HBoxContainer/VBoxContainer/ProgressBar/Control" unique_id=97898269]
 layout_mode = 0
-offset_left = -259.0
-offset_top = -258.0
-offset_right = 241.0
-offset_bottom = 96.0
-texture = ExtResource("7_0k4rk")
+offset_left = -200.0
+offset_top = -260.0
+offset_right = 200.0
+offset_bottom = 140.0
+texture = ExtResource("7_klp4l")
+expand_mode = 1
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/ProgressBar" unique_id=645318742]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -100.0
-offset_bottom = -100.0
+offset_top = -110.0
+offset_bottom = -110.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_wq8kk")
