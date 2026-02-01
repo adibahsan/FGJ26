@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dmccijjc2cgbt"]
 
-[ext_resource type="Script" uid="uid://cne3x38odd3s4" path="res://Scripts/MinigameSpammer.cs" id="1_62q7j"]
+[ext_resource type="Script" uid="uid://cg300i4l4ms7" path="res://Scripts/UiSleepBar.cs" id="1_fi0ty"]
 [ext_resource type="Theme" uid="uid://dhdi1ka7qfrlc" path="res://Themes/ui_font_theme.tres" id="2_51d86"]
 [ext_resource type="FontFile" uid="uid://cpwhbheucfmak" path="res://Assets/Fonts/ComicNeue-Bold.ttf" id="3_ykumd"]
 [ext_resource type="Texture2D" uid="uid://cc0laowdqup7d" path="res://Assets/Textures/BarTexture01.png" id="4_eovyk"]
@@ -13,7 +13,7 @@ texture = ExtResource("4_eovyk")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ux87r"]
 texture = ExtResource("5_8xiun")
 
-[node name="UiSleepBarV2" type="Control" unique_id=1961733606 node_paths=PackedStringArray("UiObject")]
+[node name="UiSleepBarV2" type="Control" unique_id=1961733606 node_paths=PackedStringArray("ProgressBar")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,8 +21,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(1, 0)
-script = ExtResource("1_62q7j")
-UiObject = NodePath("UIBarOverlayParent/ProgressBar")
+script = ExtResource("1_fi0ty")
+ProgressBar = NodePath("UIBarOverlayParent/ProgressBar")
+StartValue = 100.0
 
 [node name="UIBarOverlayParent" type="Control" parent="." unique_id=1927616660]
 layout_mode = 1
