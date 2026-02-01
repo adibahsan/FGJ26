@@ -7,6 +7,7 @@ public partial class EventSystem : Node
 	[Export] public float MinEventDuration { get; set; } = 10f;
 	[Export] public float MaxEventDuration { get; set; } = 30f;
 	[Export] public float InitialDelay { get; set; } = 5f;
+	[Export] public MaskType DebugFirstEvent { get; set; } = MaskType.None;
 
 	private readonly MaskType[] _availableEvents = 
 	{
@@ -42,6 +43,14 @@ public partial class EventSystem : Node
 	private void CreateShuffledEventQueue()
 	{
 		var shuffled = ShuffleHelper.ToShuffledList(_availableEvents);
+
+		// Debug: move specified event to front
+		if (DebugFirstEvent != MaskType.None && shuffled.Contains(DebugFirstEvent))
+		{
+			shuffled.Remove(DebugFirstEvent);
+			shuffled.Insert(0, DebugFirstEvent);
+		}
+
 		_eventQueue = new Queue<MaskType>(shuffled);
 	}
 

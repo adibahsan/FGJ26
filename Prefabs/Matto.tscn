@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://bfpo1tnroirav"]
 
 [ext_resource type="Material" uid="uid://b82mmslr2sksc" path="res://Assets/Materials/MattoJaKasvi.tres" id="1_w20yp"]
-[ext_resource type="ArrayMesh" uid="uid://oqbilaky8pui" path="res://Assets/Environment/Matto.res" id="2_w20yp"]
+[ext_resource type="ArrayMesh" uid="uid://31qa3a1pirgj" path="res://Assets/Environment/Matto.res" id="2_w20yp"]
 [ext_resource type="Texture2D" uid="uid://ccrhfu57hpy5o" path="res://Assets/Textures/VessaTavara.png" id="3_pupdg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n4x5a"]
 albedo_color = Color(0.57700837, 0.5770084, 0.57700837, 1)
 albedo_texture = ExtResource("3_pupdg")
 
-[node name="Matto" type="StaticBody3D" unique_id=1920436334]
+[node name="Matto" type="Node3D" unique_id=1700477062]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1677661318]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)

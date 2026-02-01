@@ -1,11 +1,26 @@
 [gd_scene format=3 uid="uid://df2xhoxibkudv"]
 
+[ext_resource type="Script" uid="uid://d4kda6l8sxtyn" path="res://Scripts/Salesman.cs" id="1_1c2o7"]
 [ext_resource type="Material" path="res://Assets/Materials/SalesmanMaterial.tres" id="1_v17h0"]
 [ext_resource type="ArrayMesh" uid="uid://bjlsv3w7sncol" path="res://Assets/Characters/Salesman.res" id="2_1c2o7"]
 
-[node name="Salesman" type="Node3D" unique_id=891035573]
+[node name="Salesman" type="Node3D" unique_id=891035573 node_paths=PackedStringArray("Mesh", "StartPosition", "ActivePosition", "EndPosition")]
+script = ExtResource("1_1c2o7")
+Mesh = NodePath("MeshPos")
+StartPosition = NodePath("StartPos")
+ActivePosition = NodePath("ActivePos")
+EndPosition = NodePath("EndPos")
+MoveSpeed = 3.0
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=543560265]
+[node name="MeshPos" type="Node3D" parent="." unique_id=1650208832]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshPos" unique_id=543560265]
 transform = Transform3D(-1, -8.742278e-08, 0, -3.821371e-15, 4.371139e-08, 1, -8.742278e-08, 1, -4.371139e-08, 0, 0, 0)
 material_override = ExtResource("1_v17h0")
 mesh = ExtResource("2_1c2o7")
+
+[node name="StartPos" type="Node3D" parent="." unique_id=542727769]
+
+[node name="ActivePos" type="Node3D" parent="." unique_id=1170671750]
+
+[node name="EndPos" type="Node3D" parent="." unique_id=376705838]
