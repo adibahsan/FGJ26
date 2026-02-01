@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bit4xtq1g0rxw" path="res://UI/ui_sleep_bar.tscn" id="5_6mi8o"]
 [ext_resource type="PackedScene" uid="uid://dga0cp0ivh4pw" path="res://Scenes/minigame_typer.tscn" id="5_e38tf"]
 [ext_resource type="PackedScene" uid="uid://dc8wwp062kayr" path="res://Scenes/game_end.tscn" id="6_4ilpx"]
+[ext_resource type="PackedScene" uid="uid://nnul3ikxh0dt" path="res://Scenes/minigame_rotator.tscn" id="6_5yh0p"]
 [ext_resource type="Resource" uid="uid://c6816pakdnmjg" path="res://Audio/Data/event_sfx_cooling.tres" id="6_bftu2"]
 [ext_resource type="PackedScene" uid="uid://cdplpx4r222di" path="res://UI/ui_place_mask.tscn" id="6_mql7d"]
 [ext_resource type="PackedScene" uid="uid://b1aob6gs6un0j" path="res://Scenes/minigame_spammer.tscn" id="6_t3xx2"]
@@ -19,8 +20,8 @@
 [ext_resource type="Resource" uid="uid://b7s7vstn2f670" path="res://Audio/Data/event_sfx_sleep.tres" id="11_aphk7"]
 [ext_resource type="Resource" uid="uid://ln3hikckqqgw" path="res://Audio/Data/event_sfx_snorkel.tres" id="12_qo105"]
 [ext_resource type="Resource" uid="uid://8bgvebv5q7xs" path="res://Audio/Data/event_sfx_welding.tres" id="13_fr8xg"]
-[ext_resource type="PackedScene" uid="uid://bjs0nbjqcojdo" path="res://UI/ui_timer.tscn" id="20_faur3"]
-[ext_resource type="Script" uid="uid://c37ychysc2owj" path="res://Scripts/PauseMenu.cs" id="21_4ilpx"]
+[ext_resource type="PackedScene" path="res://UI/ui_timer.tscn" id="20_faur3"]
+[ext_resource type="Script" path="res://Scripts/PauseMenu.cs" id="21_4ilpx"]
 [ext_resource type="FontFile" uid="uid://cpwhbheucfmak" path="res://Assets/Fonts/ComicNeue-Bold.ttf" id="22_b78im"]
 [ext_resource type="Texture2D" uid="uid://d086nxg163dne" path="res://Assets/UI/UI_MinigameBG_01.png" id="23_uakxb"]
 [ext_resource type="Texture2D" uid="uid://dngdx6qeic76e" path="res://Assets/UI/UI_ButtonBG_01.png" id="24_aphk7"]
@@ -34,7 +35,7 @@ default_font_size = 74
 script = ExtResource("1_jcjmw")
 HouseScene = ExtResource("2_ht4rx")
 PlayerScene = ExtResource("3_u7uub")
-MinigameScenes = Array[PackedScene]([ExtResource("6_t3xx2"), ExtResource("5_e38tf")])
+MinigameScenes = Array[PackedScene]([ExtResource("6_t3xx2"), ExtResource("5_e38tf"), ExtResource("6_5yh0p")])
 GameOverScene = ExtResource("6_4ilpx")
 PickupUIElement = NodePath("UiPickUp")
 SetMaskUIElement = NodePath("UiPlaceMask")

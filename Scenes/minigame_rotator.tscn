@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://nnul3ikxh0dt"]
+
+[ext_resource type="Script" uid="uid://vxojcdor4l5g" path="res://Scripts/MinigameRotator.cs" id="1_yj4r4"]
+[ext_resource type="Theme" uid="uid://dhdi1ka7qfrlc" path="res://Themes/ui_font_theme.tres" id="2_wq8kk"]
+[ext_resource type="FontFile" uid="uid://cpwhbheucfmak" path="res://Assets/Fonts/ComicNeue-Bold.ttf" id="3_0k4rk"]
+[ext_resource type="Texture2D" uid="uid://cc0laowdqup7d" path="res://Assets/Textures/BarTexture01.png" id="4_klp4l"]
+[ext_resource type="Texture2D" uid="uid://dkrihvyhplsma" path="res://Assets/Textures/BarTexture02.png" id="5_oiqeh"]
+[ext_resource type="Texture2D" uid="uid://bfilfj0h1wydb" path="res://Assets/UI/UI_Minigamebar_01.png" id="6_b4ajl"]
+[ext_resource type="Texture2D" uid="uid://c0oc8454k01yb" path="res://Assets/Textures/RotateBase.png" id="6_wq8kk"]
+[ext_resource type="Texture2D" uid="uid://duowjk0fq3oq5" path="res://Assets/Textures/Pointer.png" id="7_0k4rk"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ssqhy"]
+texture = ExtResource("4_klp4l")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lsq27"]
+texture = ExtResource("5_oiqeh")
+
+[node name="MinigameRotator" type="Control" unique_id=1178754382 node_paths=PackedStringArray("FillBar", "RotatingVisual")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yj4r4")
+FillBar = NodePath("HBoxContainer/VBoxContainer/ProgressBar")
+RotatingVisual = NodePath("HBoxContainer/VBoxContainer/ProgressBar/Control/Pointer")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1391481684]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1626585456]
+layout_mode = 2
+alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="HBoxContainer/VBoxContainer" unique_id=1723163164]
+custom_minimum_size = Vector2(360, 60)
+layout_mode = 2
+theme = ExtResource("2_wq8kk")
+theme_override_colors/font_outline_color = Color(0.17530671, 0.15291, 0.40291527, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("3_0k4rk")
+theme_override_styles/background = SubResource("StyleBoxTexture_ssqhy")
+theme_override_styles/fill = SubResource("StyleBoxTexture_lsq27")
+max_value = 1.0
+value = 0.5
+
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer/ProgressBar" unique_id=182772493]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 181.0
+offset_top = -128.0
+offset_right = -129.0
+offset_bottom = -138.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/ProgressBar/Control" unique_id=105531960]
+layout_mode = 0
+offset_left = -260.0
+offset_top = -246.0
+offset_right = 240.0
+offset_bottom = 108.0
+texture = ExtResource("6_wq8kk")
+
+[node name="Pointer" type="TextureRect" parent="HBoxContainer/VBoxContainer/ProgressBar/Control" unique_id=97898269]
+layout_mode = 0
+offset_left = -259.0
+offset_top = -258.0
+offset_right = 241.0
+offset_bottom = 96.0
+texture = ExtResource("7_0k4rk")
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/ProgressBar" unique_id=645318742]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_wq8kk")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.25921082, 0.24350682, 0.46336284, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_0k4rk")
+text = "Follow the sequence"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="UIBarOverlay" type="TextureRect" parent="HBoxContainer/VBoxContainer/ProgressBar" unique_id=1933928298]
+layout_mode = 0
+offset_left = -48.0
+offset_top = -44.0
+offset_right = 400.0
+offset_bottom = 81.0
+texture = ExtResource("6_b4ajl")
+expand_mode = 1
