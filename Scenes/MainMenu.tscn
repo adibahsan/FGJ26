@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://d086nxg163dne" path="res://Assets/UI/UI_MinigameBG_01.png" id="3_df05h"]
 [ext_resource type="FontFile" uid="uid://cpwhbheucfmak" path="res://Assets/Fonts/ComicNeue-Bold.ttf" id="4_8um5k"]
 [ext_resource type="Texture2D" uid="uid://dngdx6qeic76e" path="res://Assets/UI/UI_ButtonBG_01.png" id="5_xim88"]
+[ext_resource type="Script" uid="uid://dda5gx1bgy1on" path="res://Scripts/AudioSettingsUI.cs" id="6_audio"]
 
 [sub_resource type="Theme" id="Theme_853f1"]
 default_font_size = 74
@@ -157,3 +158,43 @@ offset_right = 550.0
 offset_bottom = 87.0
 theme_override_font_sizes/font_size = 65
 text = "Quit"
+
+[node name="AudioSettingsPanel" type="Control" parent="." unique_id=-1294967295 node_paths=PackedStringArray("MuteButton", "VolumeSlider")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -320.0
+offset_top = -100.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("6_audio")
+MuteButton = NodePath("MuteButton")
+VolumeSlider = NodePath("VolumeSlider")
+
+[node name="MuteButton" type="Button" parent="AudioSettingsPanel" unique_id=-1294967294]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 120.0
+offset_bottom = 20.0
+theme_override_fonts/font = ExtResource("4_8um5k")
+theme_override_font_sizes/font_size = 24
+text = "Mute"
+
+[node name="VolumeSlider" type="HSlider" parent="AudioSettingsPanel" unique_id=-1294967293]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 130.0
+offset_top = -15.0
+offset_right = 300.0
+offset_bottom = 15.0
+value = 100.0
